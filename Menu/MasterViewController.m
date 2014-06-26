@@ -33,6 +33,39 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    [self decorateMasterView];
+}
+
+#pragma mark - UI 
+- (void) decorateMasterView
+{
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.detailViewController.view.frame];
+    UIImage *backgroundImage = [UIImage imageNamed:@"back"];
+    [backgroundImageView setImage:backgroundImage];
+    [self.navigationController.view insertSubview:backgroundImageView atIndex:0];
+    [self.detailViewController.view addSubview:backgroundImageView];
+    
+    UIBlurEffect *blureEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:blureEffect];
+    effectView.frame = backgroundImageView.frame;
+    [backgroundImageView addSubview:effectView];
+    
+    UIVibrancyEffect *vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:blureEffect];
+    UIVisualEffectView *vibrancyEffectView = [[UIVisualEffectView alloc] initWithEffect:vibrancyEffect];
+    
+    // Label for vibrant text
+    UILabel *vibrantLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    [vibrantLabel setText:@"Vibrant"];
+    [vibrantLabel setFont:[UIFont systemFontOfSize:72.0f]];
+    [vibrantLabel sizeToFit];
+    [vibrantLabel setCenter: self.view.center];
+    
+    // Add label to the vibrancy view
+    [[vibrancyEffectView contentView] addSubview:vibrantLabel];
+    [effectView addSubview:vibrancyEffectView];
+
+    [self.tableView setBackgroundColor: [UIColor clearColor]];
 }
 
 - (void)didReceiveMemoryWarning {

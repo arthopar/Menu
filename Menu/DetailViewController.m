@@ -42,6 +42,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    
+    [self initPageViewController];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,6 +70,62 @@
 - (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
     // Return YES to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
     return YES;
+}
+
+#pragma mark - UIPageViewController
+
+-(void) initPageViewController
+{
+    _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation: UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    
+    _pageViewController.delegate = self;
+    _pageViewController.dataSource = self;
+    
+    _pageViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    _contentViewController = [[UIViewController alloc] init];
+    NSArray *viewControllers = [NSArray arrayWithObject:_contentViewController];
+    [_pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    [self addChildViewController:_pageViewController];
+    [self.view addSubview:_pageViewController.view];
+    _pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [_pageViewController didMoveToParentViewController:self];
+}
+
+#pragma mark - UIPageViewControllerDataSource Methods
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
+      viewControllerBeforeViewController:(UIViewController *)viewController {
+    
+    //TODO init content view
+    _contentViewController = [[UIViewController alloc] init];
+    
+    return _contentViewController;
+    
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
+       viewControllerAfterViewController:(UIViewController *)viewController {
+    
+    //TODO init content view
+    return nil;
+    
+}
+
+#pragma mark - UIPageViewControllerDelegate Methods
+
+- (UIPageViewControllerSpineLocation)pageViewController:(UIPageViewController *)pageViewController
+                   spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation {
+    
+    UIViewController *currentViewController = [_pageViewController.viewControllers objectAtIndex:0];
+    NSArray *viewControllers = [NSArray arrayWithObject:currentViewController];
+    [pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
+    
+    _pageViewController.doubleSided = NO;
+    
+    return UIPageViewControllerSpineLocationMin;
+    
 }
 
 @end
