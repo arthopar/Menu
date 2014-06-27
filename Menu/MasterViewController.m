@@ -55,11 +55,11 @@
     UIVisualEffectView *vibrancyEffectView = [[UIVisualEffectView alloc] initWithEffect:vibrancyEffect];
     
     // Label for vibrant text
-    UILabel *vibrantLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    [vibrantLabel setText:@"Vibrant"];
-    [vibrantLabel setFont:[UIFont systemFontOfSize:72.0f]];
-    [vibrantLabel sizeToFit];
-    [vibrantLabel setCenter: self.view.center];
+//    UILabel *vibrantLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+//    [vibrantLabel setText:@"Vibrant"];
+//    [vibrantLabel setFont:[UIFont systemFontOfSize:72.0f]];
+//    [vibrantLabel sizeToFit];
+//    [vibrantLabel setCenter: self.view.center];
     
     // Add label to the vibrancy view
     [[vibrancyEffectView contentView] addSubview:vibrantLabel];
