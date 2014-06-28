@@ -40,32 +40,23 @@
 #pragma mark - UI 
 - (void) decorateMasterView
 {
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.detailViewController.view.frame];
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(-40, -10, CGRectGetWidth(self.view.frame) + 50, 50 + CGRectGetHeight(self.view.frame))];
     UIImage *backgroundImage = [UIImage imageNamed:@"back"];
+    
+    
+    backgroundImage = [self applyBlurOnImage:backgroundImage withRadius:6];
     [backgroundImageView setImage:backgroundImage];
-    [self.navigationController.view insertSubview:backgroundImageView atIndex:0];
-    [self.detailViewController.view addSubview:backgroundImageView];
-    
-    UIBlurEffect *blureEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:blureEffect];
-    effectView.frame = backgroundImageView.frame;
-    [backgroundImageView addSubview:effectView];
-    
-    UIVibrancyEffect *vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:blureEffect];
-    UIVisualEffectView *vibrancyEffectView = [[UIVisualEffectView alloc] initWithEffect:vibrancyEffect];
-    
-    // Label for vibrant text
-//    UILabel *vibrantLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-//    [vibrantLabel setText:@"Vibrant"];
-//    [vibrantLabel setFont:[UIFont systemFontOfSize:72.0f]];
-//    [vibrantLabel sizeToFit];
-//    [vibrantLabel setCenter: self.view.center];
-    
-    // Add label to the vibrancy view
-    [[vibrancyEffectView contentView] addSubview:vibrantLabel];
-    [effectView addSubview:vibrancyEffectView];
+    [self.parentViewController.view insertSubview:backgroundImageView atIndex:0];
+    self.tableView.backgroundColor = [UIColor clearColor];
+}
 
-    [self.tableView setBackgroundColor: [UIColor clearColor]];
+- (UIImage *)applyBlurOnImage: (UIImage *)imageToBlur withRadius: (CGFloat)blurRadius
+{
+    CIImage *originalImage = [CIImage imageWithCGImage: imageToBlur.CGImage];
+    CIFilter *filter = [CIFilter filterWithName: @"CIGaussianBlur" keysAndValues: kCIInputImageKey, originalImage, @"inputRadius", @(blurRadius), nil];
+    CIImage *outputImage = filter.outputImage;
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef outImage = [context createCGImage: outputImage fromRect: [outputImage extent]]; return [UIImage imageWithCGImage: outImage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,9 +77,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
-        [(DetailViewController *)[[segue destinationViewController] topViewController] setDetailItem:object];
     }
 }
 
@@ -126,8 +114,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSDate *object = self.objects[indexPath.row];
-        self.detailViewController.detailItem = object;
+ 
     }
 }
 

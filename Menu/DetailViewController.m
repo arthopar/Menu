@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "PageContentViewController.h"
 
 @interface DetailViewController ()
             
@@ -15,33 +16,10 @@
 @end
 
 @implementation DetailViewController
-            
-#pragma mark - Managing the detail item
-
-- (void)setDetailItem:(id)newDetailItem {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-            
-        // Update the view.
-        [self configureView];
-    }
-
-    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
-    }
-}
-
-- (void)configureView {
-    // Update the user interface for the detail item.
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-    }
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
     
     [self initPageViewController];
 }
@@ -76,56 +54,80 @@
 
 -(void) initPageViewController
 {
-    _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation: UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    _pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     
-    _pageViewController.delegate = self;
     _pageViewController.dataSource = self;
     
-    _pageViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
+    NSArray *viewControllers = @[startingViewController];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
-    _contentViewController = [[UIViewController alloc] init];
-    NSArray *viewControllers = [NSArray arrayWithObject:_contentViewController];
-    [_pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    
+    _pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
-    _pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [_pageViewController didMoveToParentViewController:self];
 }
 
 #pragma mark - UIPageViewControllerDataSource Methods
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
-      viewControllerBeforeViewController:(UIViewController *)viewController {
+- (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
+{
+    if (index > 3) {
+        return nil;
+    }
     
-    //TODO init content view
-    _contentViewController = [[UIViewController alloc] init];
+    // Create a new view controller and pass suitable data.
+    //PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+    PageContentViewController *pageContentViewController = [[PageContentViewController alloc] init];
+    pageContentViewController.pageIndex = index;
     
-    return _contentViewController;
-    
+    return pageContentViewController;
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
-       viewControllerAfterViewController:(UIViewController *)viewController {
+#pragma mark - Page View Controller Data Source
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+{
+    NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
     
-    //TODO init content view
-    return nil;
+    if ((index == 0) || (index == NSNotFound)) {
+        return nil;
+    }
     
+    index--;
+    NSLog(@"Index = %d", index);
+    return [self viewControllerAtIndex:index];
 }
 
-#pragma mark - UIPageViewControllerDelegate Methods
-
-- (UIPageViewControllerSpineLocation)pageViewController:(UIPageViewController *)pageViewController
-                   spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation {
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+{
+    NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
     
-    UIViewController *currentViewController = [_pageViewController.viewControllers objectAtIndex:0];
-    NSArray *viewControllers = [NSArray arrayWithObject:currentViewController];
-    [pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
+    if (index == NSNotFound) {
+        return nil;
+    }
     
-    _pageViewController.doubleSided = NO;
-    
-    return UIPageViewControllerSpineLocationMin;
-    
+    index++;
+    if (index == 4) {
+        return nil;
+    }
+    NSLog(@"Index = %d", index);
+    return [self viewControllerAtIndex:index];
 }
+
+//#pragma mark - UIPageViewControllerDelegate Methods
+//
+//- (UIPageViewControllerSpineLocation)pageViewController:(UIPageViewController *)pageViewController
+//                   spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation {
+//    
+//    UIViewController *currentViewController = [_pageViewController.viewControllers objectAtIndex:0];
+//    NSArray *viewControllers = [NSArray arrayWithObject:currentViewController];
+//    [pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
+//    
+//    _pageViewController.doubleSided = NO;
+//    
+//    return UIPageViewControllerSpineLocationMin;
+//    
+//}
 
 @end
