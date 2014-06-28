@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEA313CA195EB94A006CEC53 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA313C9195EB94A006CEC53 /* UIImage+ImageEffects.m */; };
 		CEA643A1195C98F0009DDCC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643A0195C98F0009DDCC7 /* main.m */; };
 		CEA643A4195C98F0009DDCC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643A3195C98F0009DDCC7 /* AppDelegate.m */; };
 		CEA643A7195C98F0009DDCC7 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643A6195C98F0009DDCC7 /* MasterViewController.m */; };
@@ -14,6 +15,7 @@
 		CEA643AD195C98F0009DDCC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA643AB195C98F0009DDCC7 /* Main.storyboard */; };
 		CEA643AF195C98F0009DDCC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA643AE195C98F0009DDCC7 /* Images.xcassets */; };
 		CEA643BB195C98F0009DDCC7 /* MenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643BA195C98F0009DDCC7 /* MenuTests.m */; };
+		CEB9BD2B195F3786002C2DEA /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB9BD2A195F3786002C2DEA /* PageContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CEA313C8195EB94A006CEC53 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		CEA313C9195EB94A006CEC53 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		CEA6439B195C98F0009DDCC7 /* Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA6439F195C98F0009DDCC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEA643A0195C98F0009DDCC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,6 +45,8 @@
 		CEA643B4195C98F0009DDCC7 /* MenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA643B9195C98F0009DDCC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEA643BA195C98F0009DDCC7 /* MenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuTests.m; sourceTree = "<group>"; };
+		CEB9BD29195F3786002C2DEA /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		CEB9BD2A195F3786002C2DEA /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +94,11 @@
 				CEA643A6195C98F0009DDCC7 /* MasterViewController.m */,
 				CEA643A8195C98F0009DDCC7 /* DetailViewController.h */,
 				CEA643A9195C98F0009DDCC7 /* DetailViewController.m */,
+				CEB9BD29195F3786002C2DEA /* PageContentViewController.h */,
+				CEB9BD2A195F3786002C2DEA /* PageContentViewController.m */,
 				CEA643AB195C98F0009DDCC7 /* Main.storyboard */,
+				CEA313C8195EB94A006CEC53 /* UIImage+ImageEffects.h */,
+				CEA313C9195EB94A006CEC53 /* UIImage+ImageEffects.m */,
 				CEA643AE195C98F0009DDCC7 /* Images.xcassets */,
 				CEA6439E195C98F0009DDCC7 /* Supporting Files */,
 			);
@@ -221,9 +231,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA643A4195C98F0009DDCC7 /* AppDelegate.m in Sources */,
+				CEA313CA195EB94A006CEC53 /* UIImage+ImageEffects.m in Sources */,
 				CEA643A7195C98F0009DDCC7 /* MasterViewController.m in Sources */,
 				CEA643A1195C98F0009DDCC7 /* main.m in Sources */,
 				CEA643AA195C98F0009DDCC7 /* DetailViewController.m in Sources */,
+				CEB9BD2B195F3786002C2DEA /* PageContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
