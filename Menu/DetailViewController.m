@@ -22,6 +22,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [self initPageViewController];
+    [self decorateCategoryView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,25 +30,62 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Split view
-
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
+-(void) viewDidAppear:(BOOL)animated
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
-    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = popoverController;
+}
+#pragma mard - UI decoration
+
+- (void) decorateCategoryView
+{
+    //Get a UIImage from the UIView
+    UIBlurEffect *blureEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:blureEffect];
+    effectView.frame = _viewForLeft.bounds;
+    [effectView setAlpha:0.2];
+    [effectView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [_viewForLeft addConstraint:[NSLayoutConstraint constraintWithItem:effectView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_viewForLeft
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    
+    [_viewForLeft addConstraint:[NSLayoutConstraint constraintWithItem:effectView
+                                                          attribute:NSLayoutAttributeLeading
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_viewForLeft
+                                                          attribute:NSLayoutAttributeLeading
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    
+    [_viewForLeft addConstraint:[NSLayoutConstraint constraintWithItem:effectView
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_viewForLeft
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    
+    [_viewForLeft addConstraint:[NSLayoutConstraint constraintWithItem:effectView
+                                                          attribute:NSLayoutAttributeTrailing
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_viewForLeft
+                                                          attribute:NSLayoutAttributeTrailing
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    
+    [_viewForLeft insertSubview:effectView belowSubview:_tableViewCategories];
 }
 
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+- (UIImage *)applyBlurOnImage: (UIImage *)imageToBlur withRadius: (CGFloat)blurRadius
 {
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
-}
-
-- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
-    // Return YES to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
-    return YES;
+    CIImage *originalImage = [CIImage imageWithCGImage: imageToBlur.CGImage];
+    CIFilter *filter = [CIFilter filterWithName: @"CIGaussianBlur" keysAndValues: kCIInputImageKey, originalImage, @"inputRadius", @(blurRadius), nil];
+    CIImage *outputImage = filter.outputImage;
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef outImage = [context createCGImage: outputImage fromRect: [outputImage extent]]; return [UIImage imageWithCGImage: outImage];
 }
 
 #pragma mark - UIPageViewController
@@ -64,7 +102,7 @@
     
     _pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self addChildViewController:_pageViewController];
-    [self.view addSubview:_pageViewController.view];
+    [self.view insertSubview:_pageViewController.view atIndex:0];
     [_pageViewController didMoveToParentViewController:self];
 }
 
@@ -78,13 +116,10 @@
     
     // Create a new view controller and pass suitable data.
     PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
-    //PageContentViewController *pageContentViewController = [[PageContentViewController alloc] init];
     pageContentViewController.pageIndex = index;
     
     return pageContentViewController;
 }
-
-#pragma mark - Page View Controller Data Source
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
@@ -130,4 +165,20 @@
 //    
 //}
 
+- (IBAction)openCategories:(UIBarButtonItem *)sender {
+    CGRect destination = CGRectZero;
+    if (CGRectGetMaxY(_viewForLeft.frame) < self.view.center.y) {
+        destination = CGRectOffset(_viewForLeft.frame, 0, CGRectGetHeight(_viewForLeft.frame));
+    } else {
+        destination = CGRectOffset(_viewForLeft.frame, 0, -CGRectGetHeight(_viewForLeft.frame));
+    }
+    [UIView animateWithDuration:1
+                          delay:0.1
+         usingSpringWithDamping:0.7
+          initialSpringVelocity:0.5
+                        options:UIViewAnimationOptionAllowUserInteraction
+                     animations:^{_viewForLeft.frame = destination;}
+                     completion:nil];
+    
+}
 @end

@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate, UIPageViewControllerDataSource>
+@interface DetailViewController : UIViewController <UIPageViewControllerDataSource>
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barButtonCategories;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewCategories;
+
+@property (weak, nonatomic) IBOutlet UIView *viewForLeft;
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
+
+- (IBAction)openCategories:(UIBarButtonItem *)sender;
 @end
 
