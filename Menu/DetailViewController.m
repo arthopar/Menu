@@ -77,8 +77,8 @@
     }
     
     // Create a new view controller and pass suitable data.
-    //PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
-    PageContentViewController *pageContentViewController = [[PageContentViewController alloc] init];
+    PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+    //PageContentViewController *pageContentViewController = [[PageContentViewController alloc] init];
     pageContentViewController.pageIndex = index;
     
     return pageContentViewController;
