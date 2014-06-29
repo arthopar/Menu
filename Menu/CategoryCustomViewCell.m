@@ -11,7 +11,6 @@
 @implementation CategoryCustomViewCell
 
 @synthesize lblTitle;
-@synthesize lblSubTitle;
 @synthesize imageView;
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

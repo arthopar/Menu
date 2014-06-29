@@ -11,7 +11,6 @@
 @interface CategoryCustomViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
-@property (weak, nonatomic) IBOutlet UILabel *lblSubTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
