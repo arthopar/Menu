@@ -27,10 +27,10 @@
 {
     [super viewDidLoad];
 
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
-    UIImage *backgroundImage = [UIImage imageNamed:@"back"];
-    [backgroundImageView setImage:backgroundImage];
-    [self.view addSubview:backgroundImageView];
+//    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+//    UIImage *backgroundImage = [UIImage imageNamed:@"back"];
+//    [backgroundImageView setImage:backgroundImage];
+//    [self.view addSubview:backgroundImageView];
 }
 
 - (void)didReceiveMemoryWarning

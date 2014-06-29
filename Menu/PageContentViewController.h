@@ -11,4 +11,7 @@
 @interface PageContentViewController : UIViewController
 @property NSUInteger pageIndex;
 @property NSString *titleText;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewBackground;
+
 @end
