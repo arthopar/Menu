@@ -41,7 +41,7 @@
     UIBlurEffect *blureEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:blureEffect];
     effectView.frame = _viewForLeft.bounds;
-    [effectView setAlpha:0.2];
+    [effectView setAlpha:0.3];
     [effectView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     [_viewForLeft addConstraint:[NSLayoutConstraint constraintWithItem:effectView
@@ -77,6 +77,14 @@
                                                            constant:0.0]];
     
     [_viewForLeft insertSubview:effectView belowSubview:_tableViewCategories];
+    
+    //Add shodow
+    _viewForLeft.layer.masksToBounds = NO;
+    _viewForLeft.layer.cornerRadius = 8; // if you like rounded corners
+    _viewForLeft.layer.shadowOffset = CGSizeMake(8, 8);
+    _viewForLeft.layer.shadowRadius = 5;
+    _viewForLeft.layer.shadowOpacity = 1;
+
 }
 
 - (UIImage *)applyBlurOnImage: (UIImage *)imageToBlur withRadius: (CGFloat)blurRadius
