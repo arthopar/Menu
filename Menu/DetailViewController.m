@@ -8,8 +8,11 @@
 
 #import "DetailViewController.h"
 #import "PageContentViewController.h"
+#import "CategoryCellData.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () {
+    NSMutableArray *categoryList;
+}
             
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 
@@ -20,7 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+
+    [self retrieveCategoryList];
     [self initPageViewController];
     [self decorateCategoryView];
 }
@@ -33,7 +37,7 @@
 -(void) viewDidAppear:(BOOL)animated
 {
 }
-#pragma mard - UI decoration
+#pragma mark - UI decoration
 
 - (void) decorateCategoryView
 {
@@ -181,4 +185,52 @@
                      completion:nil];
     
 }
+
+#pragma mark - Data retriever methods
+
+- (void) retrieveCategoryList
+{
+    // TODO: For testing purpose. When the server will be available, request to server to retrieve category data instead of replace hardcoded values.
+    //// Test data
+    UIImage *image = [UIImage imageNamed:@"back"];
+    categoryList = [NSMutableArray arrayWithObjects:
+                    [[CategoryCellData alloc] initWithImage:image Title:@"Xorovac"],
+                    [[CategoryCellData alloc] initWithImage:image Title:@"Shaurma"],
+                    [[CategoryCellData alloc] initWithImage:image Title:@"Pizza"],
+                    [[CategoryCellData alloc] initWithImage:image Title:@"Dzuk"],
+                    [[CategoryCellData alloc] initWithImage:image Title:@"Garejur"],
+                    nil];
+}
+
+#pragma mark - UITableViewDataSource Methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [categoryList count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"CategoryCellID";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+
+    CategoryCellData *data = [categoryList objectAtIndex:indexPath.row];
+    cell.textLabel.text = data.title;
+    cell.imageView.image = data.image;
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDataSource Methods
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //TODO
+    NSLog(@"Selected row: %d", indexPath.row);
+}
+
 @end

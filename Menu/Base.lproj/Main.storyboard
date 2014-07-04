@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vC3-pB-5Vb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vC3-pB-5Vb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
@@ -22,37 +22,17 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uqf-fk-mkE">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="480"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="ZTr-LE-P03" customClass="CategoryCustomViewCell">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZTr-LE-P03" id="7L0-sq-QCQ">
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Xt-tV-Qeg">
-                                                            <rect key="frame" x="1" y="1" width="78" height="79"/>
-                                                        </imageView>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4w-dY-nsM">
-                                                            <rect key="frame" x="87" y="30" width="133" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="imageView" destination="7Xt-tV-Qeg" id="iRg-6M-f0N"/>
-                                                    <outlet property="lblTitle" destination="y4w-dY-nsM" id="Nyk-1G-1d9"/>
-                                                </connections>
-                                            </tableViewCell>
-                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="JEX-9P-axG" id="cuy-QA-M51"/>
+                                            <outlet property="delegate" destination="JEX-9P-axG" id="adw-yS-T46"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="uqf-fk-mkE" firstAttribute="leading" secondItem="VpV-gI-RSA" secondAttribute="leading" id="YcU-34-4RD"/>
                                     <constraint firstAttribute="bottom" secondItem="uqf-fk-mkE" secondAttribute="bottom" id="bfg-Tr-N9H"/>
-                                    <constraint firstItem="uqf-fk-mkE" firstAttribute="top" secondItem="VpV-gI-RSA" secondAttribute="top" id="dQv-7N-HoE"/>
+                                    <constraint firstItem="uqf-fk-mkE" firstAttribute="top" secondItem="VpV-gI-RSA" secondAttribute="top" constant="75" id="dQv-7N-HoE"/>
                                     <constraint firstAttribute="trailing" secondItem="uqf-fk-mkE" secondAttribute="trailing" id="fLn-qr-3Rh"/>
                                 </constraints>
                             </view>
