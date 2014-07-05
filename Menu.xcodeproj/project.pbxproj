@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2714F9F7196755DF001CD428 /* CategoryCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2714F9F6196755DF001CD428 /* CategoryCellData.m */; };
 		27453A88196350EB003AE3F6 /* CategoryCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */; };
 		CEA313CA195EB94A006CEC53 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA313C9195EB94A006CEC53 /* UIImage+ImageEffects.m */; };
 		CEA643A1195C98F0009DDCC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643A0195C98F0009DDCC7 /* main.m */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2714F9F5196755DF001CD428 /* CategoryCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryCellData.h; path = Data/CategoryCellData.h; sourceTree = "<group>"; };
+		2714F9F6196755DF001CD428 /* CategoryCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryCellData.m; path = Data/CategoryCellData.m; sourceTree = "<group>"; };
 		27453A86196350EB003AE3F6 /* CategoryCustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCustomViewCell.h; sourceTree = "<group>"; };
 		27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCustomViewCell.m; sourceTree = "<group>"; };
 		CEA313C8195EB94A006CEC53 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -67,9 +70,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2781DE9A1967366700982827 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2714F9F5196755DF001CD428 /* CategoryCellData.h */,
+				2714F9F6196755DF001CD428 /* CategoryCellData.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		CEA64392195C98F0009DDCC7 = {
 			isa = PBXGroup;
 			children = (
+				2781DE9A1967366700982827 /* Data */,
 				CEA6439D195C98F0009DDCC7 /* Menu */,
 				CEA643B7195C98F0009DDCC7 /* MenuTests */,
 				CEA6439C195C98F0009DDCC7 /* Products */,
@@ -233,6 +246,7 @@
 				CEA643A4195C98F0009DDCC7 /* AppDelegate.m in Sources */,
 				27453A88196350EB003AE3F6 /* CategoryCustomViewCell.m in Sources */,
 				CEA313CA195EB94A006CEC53 /* UIImage+ImageEffects.m in Sources */,
+				2714F9F7196755DF001CD428 /* CategoryCellData.m in Sources */,
 				CEA643A1195C98F0009DDCC7 /* main.m in Sources */,
 				CEA643AA195C98F0009DDCC7 /* DetailViewController.m in Sources */,
 				CEB9BD2B195F3786002C2DEA /* PageContentViewController.m in Sources */,

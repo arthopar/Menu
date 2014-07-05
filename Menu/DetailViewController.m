@@ -8,10 +8,13 @@
 
 #import "DetailViewController.h"
 #import "PageContentViewController.h"
+<<<<<<< HEAD
 #import "AFNetworking/AFHTTPRequestOperation.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "Constants.h"
 #import "AFNetworking/AFURLResponseSerialization.h"
+=======
+>>>>>>> 5c79c3c729dec8667be31553a888bfb51b3510a0
 #import "CategoryCellData.h"
 
 @interface DetailViewController () {
@@ -191,6 +194,7 @@
     
 }
 
+<<<<<<< HEAD
 # pragma mark - Server Request
 
 -(void) getCategories
@@ -212,6 +216,9 @@
         NSLog(@"Error: %@", error);
     }];
 }
+=======
+#pragma mark - Data retriever methods
+>>>>>>> 5c79c3c729dec8667be31553a888bfb51b3510a0
 
 - (void) retrieveCategoryList
 {
