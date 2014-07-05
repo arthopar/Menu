@@ -11,7 +11,7 @@
 #import "CategoryCellData.h"
 
 @interface DetailViewController () {
-    NSMutableArray *categoryList;
+    NSArray *categoryList;
 }
             
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -193,13 +193,13 @@
     // TODO: For testing purpose. When the server will be available, request to server to retrieve category data instead of replace hardcoded values.
     //// Test data
     UIImage *image = [UIImage imageNamed:@"back"];
-    categoryList = [NSMutableArray arrayWithObjects:
-                    [[CategoryCellData alloc] initWithImage:image Title:@"Xorovac"],
-                    [[CategoryCellData alloc] initWithImage:image Title:@"Shaurma"],
-                    [[CategoryCellData alloc] initWithImage:image Title:@"Pizza"],
-                    [[CategoryCellData alloc] initWithImage:image Title:@"Dzuk"],
-                    [[CategoryCellData alloc] initWithImage:image Title:@"Garejur"],
-                    nil];
+    categoryList = @[
+                     [[CategoryCellData alloc] initWithImage:image Title:@"Xorovac"],
+                     [[CategoryCellData alloc] initWithImage:image Title:@"Shaurma"],
+                     [[CategoryCellData alloc] initWithImage:image Title:@"Pizza"],
+                     [[CategoryCellData alloc] initWithImage:image Title:@"Dzuk"],
+                     [[CategoryCellData alloc] initWithImage:image Title:@"Garejur"]
+                     ];
 }
 
 #pragma mark - UITableViewDataSource Methods
