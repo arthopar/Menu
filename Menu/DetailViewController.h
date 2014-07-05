@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController <UIPageViewControllerDataSource>
+@interface DetailViewController : UIViewController <UIPageViewControllerDataSource, UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barButtonCategories;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewCategories;
-
 @property (weak, nonatomic) IBOutlet UIView *viewForLeft;
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;

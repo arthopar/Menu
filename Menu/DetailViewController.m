@@ -8,8 +8,15 @@
 
 #import "DetailViewController.h"
 #import "PageContentViewController.h"
+#import "AFNetworking/AFHTTPRequestOperation.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "Constants.h"
+#import "AFNetworking/AFURLResponseSerialization.h"
+#import "CategoryCellData.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () {
+    NSArray *categoryList;
+}
             
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 
@@ -20,7 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+
+    [self retrieveCategoryList];
     [self initPageViewController];
     [self decorateCategoryView];
 }
@@ -32,8 +40,9 @@
 
 -(void) viewDidAppear:(BOOL)animated
 {
+    [self getCategories];
 }
-#pragma mard - UI decoration
+#pragma mark - UI decoration
 
 - (void) decorateCategoryView
 {
@@ -41,7 +50,7 @@
     UIBlurEffect *blureEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:blureEffect];
     effectView.frame = _viewForLeft.bounds;
-    [effectView setAlpha:0.2];
+    [effectView setAlpha:0.8];
     [effectView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     [_viewForLeft addConstraint:[NSLayoutConstraint constraintWithItem:effectView
@@ -181,4 +190,72 @@
                      completion:nil];
     
 }
+
+# pragma mark - Server Request
+
+-(void) getCategories
+{
+
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    [manager GET:[SERVERROOT stringByAppendingString:@"Category"] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        if ([responseObject isKindOfClass:[NSArray class]]) {
+            NSArray *responseArray = responseObject;
+            /* do something with responseArray */
+        } else if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *responseDict = responseObject;
+            /* do something with responseDict */
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
+- (void) retrieveCategoryList
+{
+    // TODO: For testing purpose. When the server will be available, request to server to retrieve category data instead of replace hardcoded values.
+    //// Test data
+    UIImage *image = [UIImage imageNamed:@"back"];
+    categoryList = @[
+                     [[CategoryCellData alloc] initWithImage:image Title:@"Xorovac"],
+                     [[CategoryCellData alloc] initWithImage:image Title:@"Shaurma"],
+                     [[CategoryCellData alloc] initWithImage:image Title:@"Pizza"],
+                     [[CategoryCellData alloc] initWithImage:image Title:@"Dzuk"],
+                     [[CategoryCellData alloc] initWithImage:image Title:@"Garejur"]
+                     ];
+}
+
+#pragma mark - UITableViewDataSource Methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [categoryList count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"CategoryCellID";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+
+    CategoryCellData *data = [categoryList objectAtIndex:indexPath.row];
+    cell.textLabel.text = data.title;
+    cell.imageView.image = data.image;
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDataSource Methods
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //TODO
+    NSLog(@"Selected row: %d", indexPath.row);
+}
+
 @end

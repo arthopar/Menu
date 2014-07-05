@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DFAF41F6-4E43-47D1-8F75-0BDA199C2D13</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Menu</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1EAEEAF6-1329-4B13-A563-B56A9F83587C</key>
+		<string>https://github.com/arthopar/Menu.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Menu.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1EAEEAF6-1329-4B13-A563-B56A9F83587C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/arthopar/Menu.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1EAEEAF6-1329-4B13-A563-B56A9F83587C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1EAEEAF6-1329-4B13-A563-B56A9F83587C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Menu</string>
+		</dict>
+	</array>
+</dict>
+</plist>
