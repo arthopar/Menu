@@ -13,6 +13,7 @@
 #import "Constants.h"
 #import "AFNetworking/AFURLResponseSerialization.h"
 #import "CategoryCellData.h"
+#import "CategoryCustomViewCell.h"
 
 @interface DetailViewController () {
     NSArray *categoryList;
@@ -31,6 +32,7 @@
     [self retrieveCategoryList];
     [self initPageViewController];
     [self decorateCategoryView];
+    [self decorateTableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +45,10 @@
     [self getCategories];
 }
 #pragma mark - UI decoration
-
+- (void) decorateTableView
+{
+    [self.tableViewCategories setSeparatorColor:[UIColor blackColor]];
+}
 - (void) decorateCategoryView
 {
     //Get a UIImage from the UIView
@@ -236,18 +241,27 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"CategoryCellID";
+    static NSString *CellIdentifier = @"CategoryCustomViewCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CategoryCustomViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[CategoryCustomViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 
     CategoryCellData *data = [categoryList objectAtIndex:indexPath.row];
-    cell.textLabel.text = data.title;
-    cell.imageView.image = data.image;
+    cell.lblTitle.text = data.title;
+    cell.imageViewCategory.image = data.image;
     
     return cell;
+}
+
+- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CategoryCustomViewCell *categoryCustomViewCell = (CategoryCustomViewCell*)cell;
+    [categoryCustomViewCell setBackgroundColor:[UIColor clearColor]];
+    categoryCustomViewCell.lblTitle.textColor = [UIColor brownColor];
+    [categoryCustomViewCell.imageViewCategory.layer setCornerRadius:15];
+     
 }
 
 #pragma mark - UITableViewDataSource Methods
