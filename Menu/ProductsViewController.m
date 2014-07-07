@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Artak. All rights reserved.
 //
 
-#import "DetailViewController.h"
-#import "PageContentViewController.h"
+#import "ProductsViewController.h"
+#import "ProductPageViewController.h"
 #import "AFNetworking/AFHTTPRequestOperation.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "Constants.h"
@@ -15,7 +15,7 @@
 #import "CategoryCellData.h"
 #import "CategoryCustomViewCell.h"
 
-@interface DetailViewController () {
+@interface ProductsViewController () {
     NSArray *categoryList;
 }
             
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation DetailViewController
+@implementation ProductsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -110,7 +110,7 @@
     
     _pageViewController.dataSource = self;
     
-    PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
+    ProductPageViewController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
@@ -122,14 +122,14 @@
 
 #pragma mark - UIPageViewControllerDataSource Methods
 
-- (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
+- (ProductPageViewController *)viewControllerAtIndex:(NSUInteger)index
 {
     if (index > 3) {
         return nil;
     }
     
     // Create a new view controller and pass suitable data.
-    PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+    ProductPageViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
     pageContentViewController.pageIndex = index;
     
     return pageContentViewController;
@@ -137,7 +137,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
+    NSUInteger index = ((ProductPageViewController*) viewController).pageIndex;
     
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
@@ -150,7 +150,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
+    NSUInteger index = ((ProductPageViewController*) viewController).pageIndex;
     
     if (index == NSNotFound) {
         return nil;

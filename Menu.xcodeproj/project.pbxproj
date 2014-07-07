@@ -30,11 +30,11 @@
 		CEA313CA195EB94A006CEC53 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA313C9195EB94A006CEC53 /* UIImage+ImageEffects.m */; };
 		CEA643A1195C98F0009DDCC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643A0195C98F0009DDCC7 /* main.m */; };
 		CEA643A4195C98F0009DDCC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643A3195C98F0009DDCC7 /* AppDelegate.m */; };
-		CEA643AA195C98F0009DDCC7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643A9195C98F0009DDCC7 /* DetailViewController.m */; };
+		CEA643AA195C98F0009DDCC7 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643A9195C98F0009DDCC7 /* ProductsViewController.m */; };
 		CEA643AD195C98F0009DDCC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA643AB195C98F0009DDCC7 /* Main.storyboard */; };
 		CEA643AF195C98F0009DDCC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA643AE195C98F0009DDCC7 /* Images.xcassets */; };
 		CEA643BB195C98F0009DDCC7 /* MenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643BA195C98F0009DDCC7 /* MenuTests.m */; };
-		CEB9BD2B195F3786002C2DEA /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB9BD2A195F3786002C2DEA /* PageContentViewController.m */; };
+		CEB9BD2B195F3786002C2DEA /* ProductPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB9BD2A195F3786002C2DEA /* ProductPageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,15 +97,15 @@
 		CEA643A0195C98F0009DDCC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CEA643A2195C98F0009DDCC7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEA643A3195C98F0009DDCC7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CEA643A8195C98F0009DDCC7 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		CEA643A9195C98F0009DDCC7 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		CEA643A8195C98F0009DDCC7 /* ProductsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsViewController.h; sourceTree = "<group>"; };
+		CEA643A9195C98F0009DDCC7 /* ProductsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsViewController.m; sourceTree = "<group>"; };
 		CEA643AC195C98F0009DDCC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEA643AE195C98F0009DDCC7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CEA643B4195C98F0009DDCC7 /* MenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA643B9195C98F0009DDCC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEA643BA195C98F0009DDCC7 /* MenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuTests.m; sourceTree = "<group>"; };
-		CEB9BD29195F3786002C2DEA /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
-		CEB9BD2A195F3786002C2DEA /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		CEB9BD29195F3786002C2DEA /* ProductPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductPageViewController.h; sourceTree = "<group>"; };
+		CEB9BD2A195F3786002C2DEA /* ProductPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductPageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,10 +214,10 @@
 			children = (
 				CEA643A2195C98F0009DDCC7 /* AppDelegate.h */,
 				CEA643A3195C98F0009DDCC7 /* AppDelegate.m */,
-				CEA643A8195C98F0009DDCC7 /* DetailViewController.h */,
-				CEA643A9195C98F0009DDCC7 /* DetailViewController.m */,
-				CEB9BD29195F3786002C2DEA /* PageContentViewController.h */,
-				CEB9BD2A195F3786002C2DEA /* PageContentViewController.m */,
+				CEA643A8195C98F0009DDCC7 /* ProductsViewController.h */,
+				CEA643A9195C98F0009DDCC7 /* ProductsViewController.m */,
+				CEB9BD29195F3786002C2DEA /* ProductPageViewController.h */,
+				CEB9BD2A195F3786002C2DEA /* ProductPageViewController.m */,
 				CEA643AB195C98F0009DDCC7 /* Main.storyboard */,
 				CEA313C8195EB94A006CEC53 /* UIImage+ImageEffects.h */,
 				CEA313C9195EB94A006CEC53 /* UIImage+ImageEffects.m */,
@@ -372,9 +372,9 @@
 				CE3A3B1E19682A1000CD1067 /* AFHTTPRequestOperation.m in Sources */,
 				CE3A3B2619682A1000CD1067 /* AFURLSessionManager.m in Sources */,
 				CEA643A1195C98F0009DDCC7 /* main.m in Sources */,
-				CEA643AA195C98F0009DDCC7 /* DetailViewController.m in Sources */,
+				CEA643AA195C98F0009DDCC7 /* ProductsViewController.m in Sources */,
 				CE3A3B2019682A1000CD1067 /* AFHTTPSessionManager.m in Sources */,
-				CEB9BD2B195F3786002C2DEA /* PageContentViewController.m in Sources */,
+				CEB9BD2B195F3786002C2DEA /* ProductPageViewController.m in Sources */,
 				CE3A3B2E19682A1000CD1067 /* UIWebView+AFNetworking.m in Sources */,
 				CE3A3B2119682A1000CD1067 /* AFNetworkReachabilityManager.m in Sources */,
 				CE3A3B2B19682A1000CD1067 /* UIImageView+AFNetworking.m in Sources */,
