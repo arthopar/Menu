@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
 
-#import "PageContentViewController.h"
+#import "ProductPageViewController.h"
 
-@interface PageContentViewController ()
+@interface ProductPageViewController ()
 
 @end
 
-@implementation PageContentViewController
+@implementation ProductPageViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
