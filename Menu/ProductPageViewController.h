@@ -11,7 +11,9 @@
 @interface ProductPageViewController : UIViewController
 @property NSUInteger pageIndex;
 @property NSString *titleText;
+@property NSMutableArray *products;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewBackground;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewProduct;
 
 @end
