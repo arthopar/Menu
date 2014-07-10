@@ -72,8 +72,8 @@
 		2714F9F6196755DF001CD428 /* CategoryDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryDto.m; path = Data/CategoryDto.m; sourceTree = "<group>"; };
 		27453A86196350EB003AE3F6 /* CategoryCustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCustomViewCell.h; sourceTree = "<group>"; };
 		27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCustomViewCell.m; sourceTree = "<group>"; };
-		CE34B0FC196F3A7F00D575D1 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductCell.h; path = Menu/ProductCell.h; sourceTree = "<group>"; };
-		CE34B0FD196F3A7F00D575D1 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductCell.m; path = Menu/ProductCell.m; sourceTree = "<group>"; };
+		CE34B0FC196F3A7F00D575D1 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
+		CE34B0FD196F3A7F00D575D1 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
 		CE34B0FE196F3A7F00D575D1 /* ProductDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductDto.h; path = Menu/ProductDto.h; sourceTree = "<group>"; };
 		CE34B0FF196F3A7F00D575D1 /* ProductDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductDto.m; path = Menu/ProductDto.m; sourceTree = "<group>"; };
 		CE3A3AF919682A1000CD1067 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -112,12 +112,12 @@
 		CE3A3B1B19682A1000CD1067 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		CE3A3B1C19682A1000CD1067 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		CE3A3B1D19682A1000CD1067 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		CE3A3B2F19682A2F00CD1067 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Menu/Constants.h; sourceTree = "<group>"; };
-		CE3A3B3019682A2F00CD1067 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Menu/Constants.m; sourceTree = "<group>"; };
+		CE3A3B2F19682A2F00CD1067 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CE3A3B3019682A2F00CD1067 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		CE6AAA98196C96F000DEC058 /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewCell.h; sourceTree = "<group>"; };
 		CE6AAA99196C96F000DEC058 /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
-		CEA313C8195EB94A006CEC53 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		CEA313C9195EB94A006CEC53 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		CEA313C8195EB94A006CEC53 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Menu/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		CEA313C9195EB94A006CEC53 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Menu/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		CEA52D0C196DC5B800F52A23 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		CEA52D0D196DC5B800F52A23 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		CEA52D0E196DC5B800F52A23 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -190,10 +190,50 @@
 		2781DE9A1967366700982827 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CE34B0FE196F3A7F00D575D1 /* ProductDto.h */,
+				CE34B0FF196F3A7F00D575D1 /* ProductDto.m */,
 				2714F9F5196755DF001CD428 /* CategoryDto.h */,
 				2714F9F6196755DF001CD428 /* CategoryDto.m */,
 			);
 			name = Data;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		CE34B102196F3D3E00D575D1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CECCC0C1196B461500B7A52B /* MainViewController.h */,
+				CECCC0C2196B461500B7A52B /* MainViewController.m */,
+				CEA643A8195C98F0009DDCC7 /* ProductsViewController.h */,
+				CEA643A9195C98F0009DDCC7 /* ProductsViewController.m */,
+				CEB9BD29195F3786002C2DEA /* ProductPageViewController.h */,
+				CEB9BD2A195F3786002C2DEA /* ProductPageViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CE34B103196F3D5D00D575D1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE34B0FC196F3A7F00D575D1 /* ProductCell.h */,
+				CE34B0FD196F3A7F00D575D1 /* ProductCell.m */,
+				CE6AAA98196C96F000DEC058 /* CategoryCollectionViewCell.h */,
+				CE6AAA99196C96F000DEC058 /* CategoryCollectionViewCell.m */,
+				27453A86196350EB003AE3F6 /* CategoryCustomViewCell.h */,
+				27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		CE34B104196F3D7E00D575D1 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				CEA313C8195EB94A006CEC53 /* UIImage+ImageEffects.h */,
+				CEA313C9195EB94A006CEC53 /* UIImage+ImageEffects.m */,
+				CEA52D0B196DC5B800F52A23 /* SDWebImage */,
+				CE3A3AF819682A1000CD1067 /* AFNetworking */,
+			);
+			name = 3rdParty;
 			sourceTree = "<group>";
 		};
 		CE3A3AF819682A1000CD1067 /* AFNetworking */ = {
@@ -291,15 +331,7 @@
 		CEA64392195C98F0009DDCC7 = {
 			isa = PBXGroup;
 			children = (
-				CE34B0FC196F3A7F00D575D1 /* ProductCell.h */,
-				CE34B0FD196F3A7F00D575D1 /* ProductCell.m */,
-				CE34B0FE196F3A7F00D575D1 /* ProductDto.h */,
-				CE34B0FF196F3A7F00D575D1 /* ProductDto.m */,
-				CEA52D0B196DC5B800F52A23 /* SDWebImage */,
-				CE3A3B2F19682A2F00CD1067 /* Constants.h */,
-				CE3A3B3019682A2F00CD1067 /* Constants.m */,
-				CE3A3AF819682A1000CD1067 /* AFNetworking */,
-				2781DE9A1967366700982827 /* Data */,
+				CE34B104196F3D7E00D575D1 /* 3rdParty */,
 				CEA6439D195C98F0009DDCC7 /* Menu */,
 				CEA643B7195C98F0009DDCC7 /* MenuTests */,
 				CEA6439C195C98F0009DDCC7 /* Products */,
@@ -318,23 +350,16 @@
 		CEA6439D195C98F0009DDCC7 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				2781DE9A1967366700982827 /* Data */,
+				CE34B103196F3D5D00D575D1 /* Cells */,
+				CE34B102196F3D3E00D575D1 /* ViewControllers */,
 				CEA643A2195C98F0009DDCC7 /* AppDelegate.h */,
 				CEA643A3195C98F0009DDCC7 /* AppDelegate.m */,
-				CEA643A8195C98F0009DDCC7 /* ProductsViewController.h */,
-				CEA643A9195C98F0009DDCC7 /* ProductsViewController.m */,
-				CEB9BD29195F3786002C2DEA /* ProductPageViewController.h */,
-				CEB9BD2A195F3786002C2DEA /* ProductPageViewController.m */,
+				CE3A3B2F19682A2F00CD1067 /* Constants.h */,
+				CE3A3B3019682A2F00CD1067 /* Constants.m */,
 				CEA643AB195C98F0009DDCC7 /* Main.storyboard */,
-				CEA313C8195EB94A006CEC53 /* UIImage+ImageEffects.h */,
-				CEA313C9195EB94A006CEC53 /* UIImage+ImageEffects.m */,
-				27453A86196350EB003AE3F6 /* CategoryCustomViewCell.h */,
-				27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */,
 				CEA643AE195C98F0009DDCC7 /* Images.xcassets */,
 				CEA6439E195C98F0009DDCC7 /* Supporting Files */,
-				CECCC0C1196B461500B7A52B /* MainViewController.h */,
-				CECCC0C2196B461500B7A52B /* MainViewController.m */,
-				CE6AAA98196C96F000DEC058 /* CategoryCollectionViewCell.h */,
-				CE6AAA99196C96F000DEC058 /* CategoryCollectionViewCell.m */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
