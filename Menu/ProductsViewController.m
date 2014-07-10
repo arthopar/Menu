@@ -12,16 +12,10 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "Constants.h"
 #import "AFNetworking/AFURLResponseSerialization.h"
-#import "CategoryCellData.h"
+#import "CategoryDto.h"
 #import "CategoryCustomViewCell.h"
+#import "UIImageView+WebCache.h"
 
-@interface ProductsViewController () {
-    NSArray *categoryList;
-}
-            
-@property (strong, nonatomic) UIPopoverController *masterPopoverController;
-
-@end
 
 @implementation ProductsViewController
 
@@ -29,7 +23,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    [self retrieveCategoryList];
     [self initPageViewController];
     [self decorateCategoryView];
     [self decorateTableView];
@@ -144,7 +137,7 @@
     }
     
     index--;
-    NSLog(@"Index = %d", index);
+    NSLog(@"Index = %lu", (unsigned long)index);
     return [self viewControllerAtIndex:index];
 }
 
@@ -160,7 +153,7 @@
     if (index == 4) {
         return nil;
     }
-    NSLog(@"Index = %d", index);
+    NSLog(@"Index = %lu", (unsigned long)index);
     return [self viewControllerAtIndex:index];
 }
 
@@ -196,10 +189,15 @@
     
 }
 
+- (IBAction)goToHomePage:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:Nil];
+}
+
 # pragma mark - Server Request
 
 -(void) getCategories
 {
+    _categoryList = [[NSMutableArray alloc] init];
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -208,7 +206,14 @@
         NSLog(@"JSON: %@", responseObject);
         if ([responseObject isKindOfClass:[NSArray class]]) {
             NSArray *responseArray = responseObject;
-            /* do something with responseArray */
+            for (NSDictionary *currenCategory in responseArray) {
+                CategoryDto *currentCellData = [[CategoryDto alloc] init];
+                currentCellData.imagePath = [currenCategory valueForKey:@"imagePath"];
+                currentCellData.imagePath = [SERVERROOT stringByAppendingString:currentCellData.imagePath];
+                currentCellData.name = [currenCategory valueForKey:@"name"];
+                [_categoryList addObject:currentCellData];
+            }
+            [_tableViewCategories reloadData];
         } else if ([responseObject isKindOfClass:[NSDictionary class]]) {
             NSDictionary *responseDict = responseObject;
             /* do something with responseDict */
@@ -218,25 +223,39 @@
     }];
 }
 
-- (void) retrieveCategoryList
+-(void) getProducts
 {
-    // TODO: For testing purpose. When the server will be available, request to server to retrieve category data instead of replace hardcoded values.
-    //// Test data
-    UIImage *image = [UIImage imageNamed:@"back"];
-    categoryList = @[
-                     [[CategoryCellData alloc] initWithImage:image Title:@"Xorovac"],
-                     [[CategoryCellData alloc] initWithImage:image Title:@"Shaurma"],
-                     [[CategoryCellData alloc] initWithImage:image Title:@"Pizza"],
-                     [[CategoryCellData alloc] initWithImage:image Title:@"Dzuk"],
-                     [[CategoryCellData alloc] initWithImage:image Title:@"Garejur"]
-                     ];
+    _categoryList = [[NSMutableArray alloc] init];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    [manager GET:[SERVERROOT stringByAppendingString:@"Product"] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        if ([responseObject isKindOfClass:[NSArray class]]) {
+            NSArray *responseArray = responseObject;
+            for (NSDictionary *currenCategory in responseArray) {
+                CategoryDto *currentCellData = [[CategoryDto alloc] init];
+                currentCellData.imagePath = [currenCategory valueForKey:@"imagePath"];
+                currentCellData.imagePath = [SERVERROOT stringByAppendingString:currentCellData.imagePath];
+                currentCellData.name = [currenCategory valueForKey:@"name"];
+                [_categoryList addObject:currentCellData];
+            }
+            [_tableViewCategories reloadData];
+        } else if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *responseDict = responseObject;
+            /* do something with responseDict */
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 #pragma mark - UITableViewDataSource Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [categoryList count];
+    return [_categoryList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -248,9 +267,9 @@
         cell = [[CategoryCustomViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 
-    CategoryCellData *data = [categoryList objectAtIndex:indexPath.row];
-    cell.lblTitle.text = data.title;
-    cell.imageViewCategory.image = data.image;
+    CategoryDto *currentCategory = [_categoryList objectAtIndex:indexPath.row];
+    cell.lblTitle.text = currentCategory.name;
+    [cell.imageViewCategory sd_setImageWithURL: [NSURL URLWithString:currentCategory.imagePath]];
     
     return cell;
 }
@@ -269,7 +288,7 @@
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //TODO
-    NSLog(@"Selected row: %d", indexPath.row);
+    NSLog(@"Selected row: %ld", (long)indexPath.row);
 }
 
 @end

@@ -15,7 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIView *viewForLeft;
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
+@property (strong, nonatomic) NSMutableArray *categoryList;
 
 - (IBAction)openCategories:(UIBarButtonItem *)sender;
+- (IBAction)goToHomePage:(UIBarButtonItem *)sender;
 @end
 
