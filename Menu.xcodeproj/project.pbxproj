@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2714F9F7196755DF001CD428 /* CategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 2714F9F6196755DF001CD428 /* CategoryDto.m */; };
 		27453A88196350EB003AE3F6 /* CategoryCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */; };
+		CE34B100196F3A7F00D575D1 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34B0FD196F3A7F00D575D1 /* ProductCell.m */; };
+		CE34B101196F3A7F00D575D1 /* ProductDto.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34B0FF196F3A7F00D575D1 /* ProductDto.m */; };
 		CE3A3B1E19682A1000CD1067 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A3AFA19682A1000CD1067 /* AFHTTPRequestOperation.m */; };
 		CE3A3B1F19682A1000CD1067 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A3AFC19682A1000CD1067 /* AFHTTPRequestOperationManager.m */; };
 		CE3A3B2019682A1000CD1067 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A3AFE19682A1000CD1067 /* AFHTTPSessionManager.m */; };
@@ -70,6 +72,10 @@
 		2714F9F6196755DF001CD428 /* CategoryDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryDto.m; path = Data/CategoryDto.m; sourceTree = "<group>"; };
 		27453A86196350EB003AE3F6 /* CategoryCustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCustomViewCell.h; sourceTree = "<group>"; };
 		27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCustomViewCell.m; sourceTree = "<group>"; };
+		CE34B0FC196F3A7F00D575D1 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductCell.h; path = Menu/ProductCell.h; sourceTree = "<group>"; };
+		CE34B0FD196F3A7F00D575D1 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductCell.m; path = Menu/ProductCell.m; sourceTree = "<group>"; };
+		CE34B0FE196F3A7F00D575D1 /* ProductDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductDto.h; path = Menu/ProductDto.h; sourceTree = "<group>"; };
+		CE34B0FF196F3A7F00D575D1 /* ProductDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductDto.m; path = Menu/ProductDto.m; sourceTree = "<group>"; };
 		CE3A3AF919682A1000CD1067 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		CE3A3AFA19682A1000CD1067 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		CE3A3AFB19682A1000CD1067 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -285,6 +291,10 @@
 		CEA64392195C98F0009DDCC7 = {
 			isa = PBXGroup;
 			children = (
+				CE34B0FC196F3A7F00D575D1 /* ProductCell.h */,
+				CE34B0FD196F3A7F00D575D1 /* ProductCell.m */,
+				CE34B0FE196F3A7F00D575D1 /* ProductDto.h */,
+				CE34B0FF196F3A7F00D575D1 /* ProductDto.m */,
 				CEA52D0B196DC5B800F52A23 /* SDWebImage */,
 				CE3A3B2F19682A2F00CD1067 /* Constants.h */,
 				CE3A3B3019682A2F00CD1067 /* Constants.m */,
@@ -484,6 +494,8 @@
 				CEA643A1195C98F0009DDCC7 /* main.m in Sources */,
 				CEA52D34196DC5B800F52A23 /* SDWebImageManager.m in Sources */,
 				CEA52D39196DC5B800F52A23 /* UIImage+WebP.m in Sources */,
+				CE34B101196F3A7F00D575D1 /* ProductDto.m in Sources */,
+				CE34B100196F3A7F00D575D1 /* ProductCell.m in Sources */,
 				CEA643AA195C98F0009DDCC7 /* ProductsViewController.m in Sources */,
 				CE3A3B2019682A1000CD1067 /* AFHTTPSessionManager.m in Sources */,
 				CEB9BD2B195F3786002C2DEA /* ProductPageViewController.m in Sources */,
