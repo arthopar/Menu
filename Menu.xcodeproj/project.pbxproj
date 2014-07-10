@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2714F9F7196755DF001CD428 /* CategoryCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2714F9F6196755DF001CD428 /* CategoryCellData.m */; };
 		27453A88196350EB003AE3F6 /* CategoryCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */; };
+		B2CB85FA196DB0DA0042AC85 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CB85F9196DB0DA0042AC85 /* ProductCell.m */; };
+		B2CB85FD196DCBAB0042AC85 /* ProductDto.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CB85FC196DCBAB0042AC85 /* ProductDto.m */; };
 		CE3A3B1E19682A1000CD1067 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A3AFA19682A1000CD1067 /* AFHTTPRequestOperation.m */; };
 		CE3A3B1F19682A1000CD1067 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A3AFC19682A1000CD1067 /* AFHTTPRequestOperationManager.m */; };
 		CE3A3B2019682A1000CD1067 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A3AFE19682A1000CD1067 /* AFHTTPSessionManager.m */; };
@@ -52,6 +54,10 @@
 		2714F9F6196755DF001CD428 /* CategoryCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryCellData.m; path = Data/CategoryCellData.m; sourceTree = "<group>"; };
 		27453A86196350EB003AE3F6 /* CategoryCustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCustomViewCell.h; sourceTree = "<group>"; };
 		27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCustomViewCell.m; sourceTree = "<group>"; };
+		B2CB85F8196DB0DA0042AC85 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
+		B2CB85F9196DB0DA0042AC85 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
+		B2CB85FB196DCBAB0042AC85 /* ProductDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductDto.h; path = Menu/ProductDto.h; sourceTree = "<group>"; };
+		B2CB85FC196DCBAB0042AC85 /* ProductDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductDto.m; path = Menu/ProductDto.m; sourceTree = "<group>"; };
 		CE3A3AF919682A1000CD1067 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		CE3A3AFA19682A1000CD1067 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		CE3A3AFB19682A1000CD1067 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -129,6 +135,8 @@
 		2781DE9A1967366700982827 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B2CB85FB196DCBAB0042AC85 /* ProductDto.h */,
+				B2CB85FC196DCBAB0042AC85 /* ProductDto.m */,
 				2714F9F5196755DF001CD428 /* CategoryCellData.h */,
 				2714F9F6196755DF001CD428 /* CategoryCellData.m */,
 			);
@@ -225,6 +233,8 @@
 				27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */,
 				CEA643AE195C98F0009DDCC7 /* Images.xcassets */,
 				CEA6439E195C98F0009DDCC7 /* Supporting Files */,
+				B2CB85F8196DB0DA0042AC85 /* ProductCell.h */,
+				B2CB85F9196DB0DA0042AC85 /* ProductCell.m */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -356,9 +366,11 @@
 			files = (
 				CE3A3B2D19682A1000CD1067 /* UIRefreshControl+AFNetworking.m in Sources */,
 				CE3A3B2319682A1000CD1067 /* AFURLConnectionOperation.m in Sources */,
+				B2CB85FD196DCBAB0042AC85 /* ProductDto.m in Sources */,
 				CEA643A4195C98F0009DDCC7 /* AppDelegate.m in Sources */,
 				CE3A3B2C19682A1000CD1067 /* UIProgressView+AFNetworking.m in Sources */,
 				27453A88196350EB003AE3F6 /* CategoryCustomViewCell.m in Sources */,
+				B2CB85FA196DB0DA0042AC85 /* ProductCell.m in Sources */,
 				CE3A3B3119682A2F00CD1067 /* Constants.m in Sources */,
 				CE3A3B2919682A1000CD1067 /* UIAlertView+AFNetworking.m in Sources */,
 				CEA313CA195EB94A006CEC53 /* UIImage+ImageEffects.m in Sources */,
