@@ -12,5 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionViewCategory;
 
-@property (strong, nonatomic) NSArray *categories;
+@property (strong, nonatomic) NSMutableArray *categoryList;
+
+- (IBAction)selectLangAction:(UIButton *)sender;
 @end

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class ProductPageViewController;
 @interface ProductsViewController : UIViewController <UIPageViewControllerDataSource, UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barButtonCategories;
@@ -16,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIView *viewForLeft;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewProduct;
 
-@property (strong, nonatomic) UIPageViewController *pageViewController;
+//@property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSMutableArray *categoryList;
 @property (strong, nonatomic) NSMutableArray *products;
 //@property (strong, nonatomic)  ProductPageViewController *productPagetViewController;

@@ -40,7 +40,7 @@
 
 -(void) viewDidAppear:(BOOL)animated
 {
-    [self getCategories];
+
 }
 #pragma mark - UI decoration
 - (void) decorateTableView
@@ -207,33 +207,6 @@
 
 # pragma mark - Server Request
 
--(void) getCategories
-{
-    _categoryList = [[NSMutableArray alloc] init];
-
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    [manager GET:[SERVERROOT stringByAppendingString:@"Category"] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        if ([responseObject isKindOfClass:[NSArray class]]) {
-            NSArray *responseArray = responseObject;
-            for (NSDictionary *currenCategory in responseArray) {
-                CategoryDto *currentCellData = [[CategoryDto alloc] init];
-                currentCellData.imagePath = [currenCategory valueForKey:@"imagePath"];
-                currentCellData.imagePath = [SERVERROOT stringByAppendingString:currentCellData.imagePath];
-                currentCellData.name = [currenCategory valueForKey:@"name"];
-                [_categoryList addObject:currentCellData];
-            }
-            [_tableViewCategories reloadData];
-        } else if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            //NSDictionary *responseDict = responseObject;
-            /* do something with responseDict */
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-}
 
 -(void) getProducts
 {
