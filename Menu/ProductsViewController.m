@@ -7,7 +7,6 @@
 //
 
 #import "ProductsViewController.h"
-#import "ProductPageViewController.h"
 #import "AFNetworking/AFHTTPRequestOperation.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "Constants.h"
@@ -15,7 +14,8 @@
 #import "CategoryDto.h"
 #import "CategoryCustomViewCell.h"
 #import "UIImageView+WebCache.h"
-
+#import "ProductCell.h"
+#import "ProductDto.h"
 
 @implementation ProductsViewController
 
@@ -23,9 +23,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    [self initPageViewController];
     [self decorateCategoryView];
     [self decorateTableView];
+    
+    _products = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 10; ++i) {
+        [_products addObject:[[ProductDto alloc] init]];
+    }
+    [_tableViewProduct reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,67 +100,67 @@
     CGImageRef outImage = [context createCGImage: outputImage fromRect: [outputImage extent]]; return [UIImage imageWithCGImage: outImage];
 }
 
-#pragma mark - UIPageViewController
-
--(void) initPageViewController
-{
-    _pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
-    
-    _pageViewController.dataSource = self;
-    
-    ProductPageViewController *startingViewController = [self viewControllerAtIndex:0];
-    NSArray *viewControllers = @[startingViewController];
-    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    
-    _pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    [self addChildViewController:_pageViewController];
-    [self.view insertSubview:_pageViewController.view atIndex:0];
-    [_pageViewController didMoveToParentViewController:self];
-}
-
-#pragma mark - UIPageViewControllerDataSource Methods
-
-- (ProductPageViewController *)viewControllerAtIndex:(NSUInteger)index
-{
-    if (index > 3) {
-        return nil;
-    }
-    
-    // Create a new view controller and pass suitable data.
-    ProductPageViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
-    pageContentViewController.pageIndex = index;
-    
-    return pageContentViewController;
-}
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
-{
-    NSUInteger index = ((ProductPageViewController*) viewController).pageIndex;
-    
-    if ((index == 0) || (index == NSNotFound)) {
-        return nil;
-    }
-    
-    index--;
-    NSLog(@"Index = %lu", (unsigned long)index);
-    return [self viewControllerAtIndex:index];
-}
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
-{
-    NSUInteger index = ((ProductPageViewController*) viewController).pageIndex;
-    
-    if (index == NSNotFound) {
-        return nil;
-    }
-    
-    index++;
-    if (index == 4) {
-        return nil;
-    }
-    NSLog(@"Index = %lu", (unsigned long)index);
-    return [self viewControllerAtIndex:index];
-}
+//#pragma mark - UIPageViewController
+//
+//-(void) initPageViewController
+//{
+//    _pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+//    
+//    _pageViewController.dataSource = self;
+//    
+//    _productPagetViewController = [self viewControllerAtIndex:0];
+//    NSArray *viewControllers = @[_productPagetViewController];
+//    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+//    
+//    _pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+//    [self addChildViewController:_pageViewController];
+//    [self.view insertSubview:_pageViewController.view atIndex:0];
+//    [_pageViewController didMoveToParentViewController:self];
+//}
+//
+//#pragma mark - UIPageViewControllerDataSource Methods
+//
+//- (ProductPageViewController *)viewControllerAtIndex:(NSUInteger)index
+//{
+//    if (index > 3) {
+//        return nil;
+//    }
+//    
+//    // Create a new view controller and pass suitable data.
+//    ProductPageViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+//    pageContentViewController.pageIndex = index;
+//    
+//    return pageContentViewController;
+//}
+//
+//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+//{
+//    NSUInteger index = ((ProductPageViewController*) viewController).pageIndex;
+//    
+//    if ((index == 0) || (index == NSNotFound)) {
+//        return nil;
+//    }
+//    
+//    index--;
+//    NSLog(@"Index = %lu", (unsigned long)index);
+//    return [self viewControllerAtIndex:index];
+//}
+//
+//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+//{
+//    NSUInteger index = ((ProductPageViewController*) viewController).pageIndex;
+//    
+//    if (index == NSNotFound) {
+//        return nil;
+//    }
+//    
+//    index++;
+//    if (index == 4) {
+//        return nil;
+//    }
+//    NSLog(@"Index = %lu", (unsigned long)index);
+//    return [self viewControllerAtIndex:index];
+//}
 
 //#pragma mark - UIPageViewControllerDelegate Methods
 //
@@ -174,17 +179,24 @@
 
 - (IBAction)openCategories:(UIBarButtonItem *)sender {
     CGRect destination = CGRectZero;
-    if (CGRectGetMaxY(_viewForLeft.frame) < self.view.center.y) {
-        destination = CGRectOffset(_viewForLeft.frame, 0, CGRectGetHeight(_viewForLeft.frame));
+    CGFloat offsetX;
+    if (CGRectGetMaxX(_viewForLeft.frame) <= self.view.frame.origin.x) {
+        offsetX = CGRectGetWidth(_viewForLeft.frame);
     } else {
-        destination = CGRectOffset(_viewForLeft.frame, 0, -CGRectGetHeight(_viewForLeft.frame));
+        offsetX = -CGRectGetWidth(_viewForLeft.frame);
     }
+    destination = CGRectOffset(_viewForLeft.frame, offsetX, 0);
+    
     [UIView animateWithDuration:1
                           delay:0.1
          usingSpringWithDamping:0.7
           initialSpringVelocity:0.5
                         options:UIViewAnimationOptionAllowUserInteraction
-                     animations:^{_viewForLeft.frame = destination;}
+                     animations:^{_viewForLeft.frame = destination;
+                         _tableViewProduct.frame = CGRectInset(_tableViewProduct.frame, offsetX, 0);
+                         //_tableViewProduct.frame = CGRectOffset(_tableViewProduct.frame, offsetX, 0);
+
+                     }
                      completion:nil];
     
 }
@@ -255,11 +267,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_categoryList count];
+    if ([tableView isEqual:_tableViewCategories]) {
+        return [_categoryList count];
+    }
+    if ([tableView isEqual:_tableViewProduct]) {
+        return [_products count];
+    }
+
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if ([tableView isEqual:_tableViewCategories]) {
     static NSString *CellIdentifier = @"CategoryCustomViewCell";
     
     CategoryCustomViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -272,15 +292,31 @@
     [cell.imageViewCategory sd_setImageWithURL: [NSURL URLWithString:currentCategory.imagePath]];
     
     return cell;
+    }
+    if ([tableView isEqual:_tableViewProduct]) {
+        static NSString *CellIdentifier = @"ProductCell";
+        
+        ProductCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[ProductCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+        
+        [cell updateWithDto:[_products objectAtIndex:indexPath.row]];
+        
+        return cell;
+    }
+    
+    return nil;
 }
 
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if ([tableView isEqual:_tableViewCategories]) {
     CategoryCustomViewCell *categoryCustomViewCell = (CategoryCustomViewCell*)cell;
     [categoryCustomViewCell setBackgroundColor:[UIColor clearColor]];
     categoryCustomViewCell.lblTitle.textColor = [UIColor brownColor];
     [categoryCustomViewCell.imageViewCategory.layer setCornerRadius:15];
-     
+    }
 }
 
 #pragma mark - UITableViewDataSource Methods

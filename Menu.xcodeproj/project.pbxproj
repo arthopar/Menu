@@ -53,7 +53,6 @@
 		CEA643AA195C98F0009DDCC7 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643A9195C98F0009DDCC7 /* ProductsViewController.m */; };
 		CEA643AD195C98F0009DDCC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA643AB195C98F0009DDCC7 /* Main.storyboard */; };
 		CEA643BB195C98F0009DDCC7 /* MenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643BA195C98F0009DDCC7 /* MenuTests.m */; };
-		CEB9BD2B195F3786002C2DEA /* ProductPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB9BD2A195F3786002C2DEA /* ProductPageViewController.m */; };
 		CECCC0C3196B461500B7A52B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECCC0C2196B461500B7A52B /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -163,8 +162,6 @@
 		CEA643B4195C98F0009DDCC7 /* MenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA643B9195C98F0009DDCC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEA643BA195C98F0009DDCC7 /* MenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuTests.m; sourceTree = "<group>"; };
-		CEB9BD29195F3786002C2DEA /* ProductPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductPageViewController.h; sourceTree = "<group>"; };
-		CEB9BD2A195F3786002C2DEA /* ProductPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductPageViewController.m; sourceTree = "<group>"; };
 		CECCC0C1196B461500B7A52B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		CECCC0C2196B461500B7A52B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,8 +203,6 @@
 				CECCC0C2196B461500B7A52B /* MainViewController.m */,
 				CEA643A8195C98F0009DDCC7 /* ProductsViewController.h */,
 				CEA643A9195C98F0009DDCC7 /* ProductsViewController.m */,
-				CEB9BD29195F3786002C2DEA /* ProductPageViewController.h */,
-				CEB9BD2A195F3786002C2DEA /* ProductPageViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -523,7 +518,6 @@
 				CE34B100196F3A7F00D575D1 /* ProductCell.m in Sources */,
 				CEA643AA195C98F0009DDCC7 /* ProductsViewController.m in Sources */,
 				CE3A3B2019682A1000CD1067 /* AFHTTPSessionManager.m in Sources */,
-				CEB9BD2B195F3786002C2DEA /* ProductPageViewController.m in Sources */,
 				CE3A3B2E19682A1000CD1067 /* UIWebView+AFNetworking.m in Sources */,
 				CEA52D3B196DC5B800F52A23 /* UIImageView+WebCache.m in Sources */,
 				CEA52D32196DC5B800F52A23 /* SDWebImageDownloader.m in Sources */,
