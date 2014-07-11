@@ -8,5 +8,5 @@
 
 #import "Constants.h"
 
-NSString* const SERVERROOT = @"http://82.199.200.96:8080/Menu/";
+NSString* const SERVERROOT = @"http://arthopar.zapto.org/Menu/";
 

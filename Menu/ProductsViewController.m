@@ -215,7 +215,7 @@
             }
             [_tableViewCategories reloadData];
         } else if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            NSDictionary *responseDict = responseObject;
+            //NSDictionary *responseDict = responseObject;
             /* do something with responseDict */
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -243,7 +243,7 @@
             }
             [_tableViewCategories reloadData];
         } else if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            NSDictionary *responseDict = responseObject;
+            //NSDictionary *responseDict = responseObject;
             /* do something with responseDict */
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

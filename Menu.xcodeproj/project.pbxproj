@@ -11,6 +11,7 @@
 		27453A88196350EB003AE3F6 /* CategoryCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */; };
 		CE34B100196F3A7F00D575D1 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34B0FD196F3A7F00D575D1 /* ProductCell.m */; };
 		CE34B101196F3A7F00D575D1 /* ProductDto.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34B0FF196F3A7F00D575D1 /* ProductDto.m */; };
+		CE34B105196F42F200D575D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA643AE195C98F0009DDCC7 /* Images.xcassets */; };
 		CE3A3B1E19682A1000CD1067 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A3AFA19682A1000CD1067 /* AFHTTPRequestOperation.m */; };
 		CE3A3B1F19682A1000CD1067 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A3AFC19682A1000CD1067 /* AFHTTPRequestOperationManager.m */; };
 		CE3A3B2019682A1000CD1067 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A3AFE19682A1000CD1067 /* AFHTTPSessionManager.m */; };
@@ -51,7 +52,6 @@
 		CEA643A4195C98F0009DDCC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643A3195C98F0009DDCC7 /* AppDelegate.m */; };
 		CEA643AA195C98F0009DDCC7 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643A9195C98F0009DDCC7 /* ProductsViewController.m */; };
 		CEA643AD195C98F0009DDCC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA643AB195C98F0009DDCC7 /* Main.storyboard */; };
-		CEA643AF195C98F0009DDCC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA643AE195C98F0009DDCC7 /* Images.xcassets */; };
 		CEA643BB195C98F0009DDCC7 /* MenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA643BA195C98F0009DDCC7 /* MenuTests.m */; };
 		CEB9BD2B195F3786002C2DEA /* ProductPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB9BD2A195F3786002C2DEA /* ProductPageViewController.m */; };
 		CECCC0C3196B461500B7A52B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECCC0C2196B461500B7A52B /* MainViewController.m */; };
@@ -472,7 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA643AD195C98F0009DDCC7 /* Main.storyboard in Resources */,
-				CEA643AF195C98F0009DDCC7 /* Images.xcassets in Resources */,
+				CE34B105196F42F200D575D1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
