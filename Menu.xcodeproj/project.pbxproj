@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2714F9F7196755DF001CD428 /* CategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 2714F9F6196755DF001CD428 /* CategoryDto.m */; };
 		27453A88196350EB003AE3F6 /* CategoryCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */; };
+		2799BB7919709CDE000654C5 /* ServerInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 2799BB7819709CDE000654C5 /* ServerInterface.m */; };
 		CE34B100196F3A7F00D575D1 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34B0FD196F3A7F00D575D1 /* ProductCell.m */; };
 		CE34B101196F3A7F00D575D1 /* ProductDto.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34B0FF196F3A7F00D575D1 /* ProductDto.m */; };
 		CE34B105196F42F200D575D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA643AE195C98F0009DDCC7 /* Images.xcassets */; };
@@ -71,6 +72,8 @@
 		2714F9F6196755DF001CD428 /* CategoryDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryDto.m; path = Data/CategoryDto.m; sourceTree = "<group>"; };
 		27453A86196350EB003AE3F6 /* CategoryCustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCustomViewCell.h; sourceTree = "<group>"; };
 		27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCustomViewCell.m; sourceTree = "<group>"; };
+		2799BB7719709CDE000654C5 /* ServerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerInterface.h; path = Menu/ServerInterface.h; sourceTree = "<group>"; };
+		2799BB7819709CDE000654C5 /* ServerInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerInterface.m; path = Menu/ServerInterface.m; sourceTree = "<group>"; };
 		CE34B0FC196F3A7F00D575D1 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
 		CE34B0FD196F3A7F00D575D1 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
 		CE34B0FE196F3A7F00D575D1 /* ProductDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductDto.h; path = Menu/ProductDto.h; sourceTree = "<group>"; };
@@ -223,6 +226,8 @@
 		CE34B104196F3D7E00D575D1 /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				2799BB7719709CDE000654C5 /* ServerInterface.h */,
+				2799BB7819709CDE000654C5 /* ServerInterface.m */,
 				CEA313C8195EB94A006CEC53 /* UIImage+ImageEffects.h */,
 				CEA313C9195EB94A006CEC53 /* UIImage+ImageEffects.m */,
 				CEA52D0B196DC5B800F52A23 /* SDWebImage */,
@@ -501,6 +506,7 @@
 				CE3A3B2A19682A1000CD1067 /* UIButton+AFNetworking.m in Sources */,
 				CEA52D38196DC5B800F52A23 /* UIImage+MultiFormat.m in Sources */,
 				2714F9F7196755DF001CD428 /* CategoryDto.m in Sources */,
+				2799BB7919709CDE000654C5 /* ServerInterface.m in Sources */,
 				CE3A3B2819682A1000CD1067 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				CEA52D36196DC5B800F52A23 /* UIButton+WebCache.m in Sources */,
 				CEA52D37196DC5B800F52A23 /* UIImage+GIF.m in Sources */,
