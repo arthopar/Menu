@@ -96,8 +96,9 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ProductsViewController *productsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductsViewController"];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:productsViewController];
     productsViewController.categoryList = _categoryList;
-    [self presentViewController:productsViewController animated:YES completion:nil];
+    [self presentViewController:nav animated:YES completion:nil];
     
 }
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
