@@ -174,17 +174,22 @@
 
 - (IBAction)openCategories:(UIBarButtonItem *)sender {
     CGRect destination = CGRectZero;
-    if (CGRectGetMaxY(_viewForLeft.frame) < self.view.center.y) {
-        destination = CGRectOffset(_viewForLeft.frame, 0, CGRectGetHeight(_viewForLeft.frame));
+    CGFloat offsetX;
+    if (CGRectGetMaxX(_viewForLeft.frame) <= self.view.frame.origin.x) {
+        offsetX = CGRectGetWidth(_viewForLeft.frame);
     } else {
-        destination = CGRectOffset(_viewForLeft.frame, 0, -CGRectGetHeight(_viewForLeft.frame));
+        offsetX = -CGRectGetWidth(_viewForLeft.frame);
     }
+    destination = CGRectOffset(_viewForLeft.frame, offsetX, 0);
+    
     [UIView animateWithDuration:1
                           delay:0.1
          usingSpringWithDamping:0.7
           initialSpringVelocity:0.5
                         options:UIViewAnimationOptionAllowUserInteraction
-                     animations:^{_viewForLeft.frame = destination;}
+                     animations:^{_viewForLeft.frame = destination;
+                         _tableViewCategories.frame = CGRectOffset(_tableViewCategories.frame, offsetX, 0);
+                     }
                      completion:nil];
     
 }
