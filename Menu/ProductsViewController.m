@@ -7,10 +7,8 @@
 //
 
 #import "ProductsViewController.h"
-#import "AFNetworking/AFHTTPRequestOperation.h"
-#import "AFHTTPRequestOperationManager.h"
+#import "ServerInterface.h"
 #import "Constants.h"
-#import "AFNetworking/AFURLResponseSerialization.h"
 #import "CategoryDto.h"
 #import "CategoryCustomViewCell.h"
 #import "UIImageView+WebCache.h"
@@ -212,10 +210,7 @@
 {
     _categoryList = [[NSMutableArray alloc] init];
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    [manager GET:[SERVERROOT stringByAppendingString:@"Product"] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [ServerInterface requestWithData:@"Product" parameters:nil success:^(id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         if ([responseObject isKindOfClass:[NSArray class]]) {
             NSArray *responseArray = responseObject;
@@ -231,7 +226,7 @@
             //NSDictionary *responseDict = responseObject;
             /* do something with responseDict */
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         NSLog(@"Error: %@", error);
     }];
 }
