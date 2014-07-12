@@ -17,15 +17,12 @@
     self.labelTitle.text = productDto.title;
     self.imageUrl = [NSURL URLWithString: productDto.image];
     self.textViewDetails.text = productDto.description;
-    self.buttonOrdered = [[UIButton alloc] init];
-    self.buttonSnipperUp = [[UIButton alloc] init];
-    self.buttonSnipperDown = [[UIButton alloc] init];
-    self.textFieldOrderedCount = [[UITextField alloc] init];
     self.textFieldOrderedCount.text = 0;
     
-//    self.textFieldOrderedCount.hidden=YES;
-//	self.buttonSnipperUp.hidden=YES;
-//	self.buttonSnipperDown.hidden=YES;
+    [_textFieldOrderedCount setHidden:YES];
+    [_buttonSnipperUp setHidden:YES];
+    [_buttonSnipperDown setHidden:YES];
+
 }
 
 -(void) updateImageView
@@ -35,19 +32,10 @@
 
 - (IBAction)onProductOrderPress:(id)sender {
     
-    UIButton* buttonOrdered = (UIButton *)sender;
-    
-	[buttonOrdered setHidden:YES];
-//    [textFieldOrderedCount setHidden:NO];
-//    [buttonSnipperUp setHidden:NO];
-//    [buttonSnipperDown setHidden:NO];
-//
-//	UIView *layer = [buttonOrdered superview];
-//    ProductCell *cell = (ProductCell*)[(UIView *)layer superview];
-//    [cell.textFieldOrderedCount setHidden:NO];
-//    [cell.buttonSnipperUp setHidden:NO];
-//    [cell.buttonSnipperDown setHidden:NO];
-//    cell.buttonOrdered.frame = CGRectMake(100, 10, 100, 100);
+	[_buttonOrdered setHidden:YES];
+    [_textFieldOrderedCount setHidden:NO];
+    [_buttonSnipperUp setHidden:NO];
+    [_buttonSnipperDown setHidden:NO];
 
 }
 
