@@ -14,10 +14,20 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelTitle;
 @property (strong, nonatomic) IBOutlet UITextView *textViewDetails;
 @property (strong, nonatomic) IBOutlet UIButton *buttonOrdered;
-@property (strong, nonatomic) IBOutlet UIStepper *stepperOrderedProductCount;
+
 
 @property (strong, nonatomic) NSURL *imageUrl;
+@property (strong, nonatomic) IBOutlet UITextField *textFieldOrderedCount;
+
+@property (strong, nonatomic) IBOutlet UIButton *buttonSnipperUp;
+@property (strong, nonatomic) IBOutlet UIButton *buttonSnipperDown;
 
 - (void) updateWithDto: (ProductDto*)productDto;
 - (void) updateImageView;
+- (IBAction)onProductOrderPress:(id)sender;
+- (IBAction)onSnipperUp:(id)sender;
+- (IBAction)onSnipperDown:(id)sender;
+
+
+
 @end

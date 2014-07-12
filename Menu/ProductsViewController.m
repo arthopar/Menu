@@ -198,7 +198,6 @@
         }
         
         [cell updateWithDto:[_products objectAtIndex:indexPath.row]];
-        
         return cell;
     }
     
