@@ -14,9 +14,9 @@
 {
     self = [super init];
     if (self) {
-        self.image = @"/path/to/img";
+        self.image = @"http://a57.foxnews.com/global.fncstatic.com/static/managed/img/U.S./876/493/neopolitan_pizza.jpg?ve=1&tl=1";
         self.title = @"title";
-        self.description = @"title";
+        self.description = @"Descr";
     }
     return self;
 }

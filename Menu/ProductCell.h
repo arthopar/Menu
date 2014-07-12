@@ -16,6 +16,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *buttonOrdered;
 @property (strong, nonatomic) IBOutlet UIStepper *stepperOrderedProductCount;
 
-- (ProductCell*) updateWithDto: (ProductDto*)productDto;
+@property (strong, nonatomic) NSURL *imageUrl;
 
+- (void) updateWithDto: (ProductDto*)productDto;
+- (void) updateImageView;
 @end

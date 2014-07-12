@@ -8,18 +8,21 @@
 
 #import "ProductCell.h"
 #import "ProductDto.h"
+#import "UIImageView+WebCache.h"
 
 @implementation ProductCell
 
-- (ProductCell*) updateWithDto: (ProductDto*)productDto
+-(void) updateWithDto: (ProductDto*)productDto
 {
-    ProductCell *cell;
-    cell.labelTitle.text = productDto.title; // senc lriv init ara celly
-    cell.imageViewThumbnail = [[UIImageView alloc] init]; // productDto.image
-    cell.textViewDetails.text = productDto.description;
-    cell.buttonOrdered = [[UIButton alloc] init];
-    cell.stepperOrderedProductCount = 0;
-    return cell;
+    self.labelTitle.text = productDto.title;
+    self.imageUrl = [NSURL URLWithString: productDto.image];
+    self.textViewDetails.text = productDto.description;
+    self.buttonOrdered = [[UIButton alloc] init];
+    self.stepperOrderedProductCount = 0;
 }
 
+-(void) updateImageView
+{
+    [self.imageViewThumbnail sd_setImageWithURL:_imageUrl];
+}
 @end
