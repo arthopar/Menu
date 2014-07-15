@@ -51,26 +51,37 @@
 -(void) getCategories
 {
     _categoryList = [[NSMutableArray alloc] init];
+  
+    CategoryDto *currentCellData = [[CategoryDto alloc] init];
+    currentCellData.imagePath = @"golf7.png";
+    currentCellData.name = @"Golf-7";
+    [_categoryList addObject:currentCellData];
+
+    currentCellData = [[CategoryDto alloc] init];
+    currentCellData.imagePath = @"cx7.png";
+    currentCellData.name = @"CX-7";
+    [_categoryList addObject:currentCellData];
     
-    [ServerInterface requestWithData:@"Category" parameters:nil success:^(id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        if ([responseObject isKindOfClass:[NSArray class]]) {
-            NSArray *responseArray = responseObject;
-            for (NSDictionary *currenCategory in responseArray) {
-                CategoryDto *currentCellData = [[CategoryDto alloc] init];
-                currentCellData.imagePath = [currenCategory valueForKey:@"imagePath"];
-                currentCellData.imagePath = [SERVERROOT stringByAppendingString:currentCellData.imagePath];
-                currentCellData.name = [currenCategory valueForKey:@"name"];
-                [_categoryList addObject:currentCellData];
-            }
-            [_collectionViewCategory reloadData];
-        } else if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            //NSDictionary *responseDict = responseObject;
-            /* do something with responseDict */
-        }
-    } failure:^(NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
+//    [ServerInterface requestWithData:@"Category" parameters:nil success:^(id responseObject) {
+//        NSLog(@"JSON: %@", responseObject);
+//        if ([responseObject isKindOfClass:[NSArray class]]) {
+//            NSArray *responseArray = responseObject;
+//            for (NSDictionary *currenCategory in responseArray) {
+//                CategoryDto *currentCellData = [[CategoryDto alloc] init];
+//                currentCellData.imagePath = [currenCategory valueForKey:@"imagePath"];
+//                currentCellData.imagePath = [SERVERROOT stringByAppendingString:currentCellData.imagePath];
+//                currentCellData.name = [currenCategory valueForKey:@"name"];
+//                [_categoryList addObject:currentCellData];
+//            }
+//            [_collectionViewCategory reloadData];
+//        } else if ([responseObject isKindOfClass:[NSDictionary class]]) {
+//            //NSDictionary *responseDict = responseObject;
+//            /* do something with responseDict */
+//        }
+//    } failure:^(NSError *error) {
+//        
+//        NSLog(@"Error: %@", error);
+//    }];
 }
 #pragma mark collection view source
 
@@ -82,8 +93,12 @@
     
     CategoryCollectionViewCell *cell = (CategoryCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
     CategoryDto *currentCategoryItem = _categoryList[indexPath.row];
-    NSURL *imageUrl = [NSURL URLWithString: currentCategoryItem.imagePath];
-    [cell.imageView sd_setImageWithURL:imageUrl];
+
+//  NSURL *imageUrl = [NSURL URLWithString: currentCategoryItem.imagePath];
+//	NSURL *imageUrl = [NSURL URLWithString: currentCategoryItem.imagePath];
+//  [cell.imageView sd_setImageWithURL:imageUrl];
+    [cell.imageView setImage:[UIImage imageNamed:currentCategoryItem.imagePath] ];
+    
     return cell;
     
 }

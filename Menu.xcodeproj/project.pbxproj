@@ -10,6 +10,8 @@
 		2714F9F7196755DF001CD428 /* CategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 2714F9F6196755DF001CD428 /* CategoryDto.m */; };
 		27453A88196350EB003AE3F6 /* CategoryCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */; };
 		2799BB7919709CDE000654C5 /* ServerInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 2799BB7819709CDE000654C5 /* ServerInterface.m */; };
+		B2C73EFA1975A9A300DBAF88 /* cx7.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C73EF81975A9A300DBAF88 /* cx7.png */; };
+		B2C73EFB1975A9A300DBAF88 /* golf7.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C73EF91975A9A300DBAF88 /* golf7.png */; };
 		CE34B100196F3A7F00D575D1 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34B0FD196F3A7F00D575D1 /* ProductCell.m */; };
 		CE34B101196F3A7F00D575D1 /* ProductDto.m in Sources */ = {isa = PBXBuildFile; fileRef = CE34B0FF196F3A7F00D575D1 /* ProductDto.m */; };
 		CE34B105196F42F200D575D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA643AE195C98F0009DDCC7 /* Images.xcassets */; };
@@ -74,6 +76,8 @@
 		27453A87196350EB003AE3F6 /* CategoryCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCustomViewCell.m; sourceTree = "<group>"; };
 		2799BB7719709CDE000654C5 /* ServerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerInterface.h; path = Menu/ServerInterface.h; sourceTree = "<group>"; };
 		2799BB7819709CDE000654C5 /* ServerInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerInterface.m; path = Menu/ServerInterface.m; sourceTree = "<group>"; };
+		B2C73EF81975A9A300DBAF88 /* cx7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cx7.png; sourceTree = "<group>"; };
+		B2C73EF91975A9A300DBAF88 /* golf7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = golf7.png; sourceTree = "<group>"; };
 		CE34B0FC196F3A7F00D575D1 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
 		CE34B0FD196F3A7F00D575D1 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
 		CE34B0FE196F3A7F00D575D1 /* ProductDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductDto.h; path = Menu/ProductDto.h; sourceTree = "<group>"; };
@@ -350,6 +354,8 @@
 		CEA6439D195C98F0009DDCC7 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				B2C73EF81975A9A300DBAF88 /* cx7.png */,
+				B2C73EF91975A9A300DBAF88 /* golf7.png */,
 				2781DE9A1967366700982827 /* Data */,
 				CE34B103196F3D5D00D575D1 /* Cells */,
 				CE34B102196F3D3E00D575D1 /* ViewControllers */,
@@ -473,6 +479,8 @@
 			files = (
 				CEA643AD195C98F0009DDCC7 /* Main.storyboard in Resources */,
 				CE34B105196F42F200D575D1 /* Images.xcassets in Resources */,
+				B2C73EFA1975A9A300DBAF88 /* cx7.png in Resources */,
+				B2C73EFB1975A9A300DBAF88 /* golf7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
