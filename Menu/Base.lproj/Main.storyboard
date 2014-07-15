@@ -68,7 +68,7 @@
                                         <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
                                             <rect key="frame" x="0.0" y="66" width="240" height="254"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="66" width="240" height="574"/>
                                         </variation>
                                         <connections>
@@ -91,7 +91,18 @@
                                     <constraint firstAttribute="bottom" secondItem="uqf-fk-mkE" secondAttribute="bottom" constant="120" id="cGU-3v-ql6"/>
                                     <constraint firstAttribute="trailing" secondItem="uqf-fk-mkE" secondAttribute="trailing" id="moG-EH-dOo"/>
                                     <constraint firstItem="uqf-fk-mkE" firstAttribute="top" secondItem="VpV-gI-RSA" secondAttribute="top" constant="66" id="qkt-05-sOE"/>
+                                    <constraint firstItem="KTC-lK-w0l" firstAttribute="leading" secondItem="uqf-fk-mkE" secondAttribute="leading" id="vCT-pd-jtW"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="vCT-pd-jtW"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="vCT-pd-jtW"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="123" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cpB-EA-Exc">
                                 <rect key="frame" x="93" y="72" width="367" height="408"/>
@@ -146,7 +157,6 @@
                                                             <include reference="4tg-qh-SSQ"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=regular"/>
                                                     <connections>
                                                         <action selector="onSnipperUp:" destination="UHB-sd-eCD" eventType="touchDown" id="jWs-4y-znb"/>
                                                     </connections>
@@ -226,7 +236,7 @@
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                                    <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                                         <rect key="frame" x="122" y="40.5" width="206" height="75.5"/>
                                                     </variation>
                                                 </textView>
@@ -282,13 +292,6 @@
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=regular">
-                                                <mask key="subviews">
-                                                    <include reference="GmC-qX-aQi"/>
-                                                    <include reference="iDJ-Lj-5KA"/>
-                                                    <include reference="pLG-5I-t9q"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular">
                                                 <mask key="constraints">
                                                     <include reference="9N2-Kt-w7i"/>
                                                     <include reference="DQs-Yy-5b2"/>
@@ -312,6 +315,13 @@
                                                     <include reference="3QQ-Wo-X35"/>
                                                     <include reference="FpT-NN-INR"/>
                                                     <include reference="Ibf-FN-ni6"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <mask key="subviews">
+                                                    <include reference="GmC-qX-aQi"/>
+                                                    <include reference="iDJ-Lj-5KA"/>
+                                                    <include reference="pLG-5I-t9q"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
