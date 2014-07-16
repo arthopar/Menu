@@ -118,7 +118,8 @@
          usingSpringWithDamping:0.7
           initialSpringVelocity:0.5
                         options:UIViewAnimationOptionAllowUserInteraction
-                     animations:^{_viewForLeft.frame = destination;
+                     animations:^{
+                         _viewForLeft.frame = destination;
                          _tableViewProduct.frame = CGRectInset(_tableViewProduct.frame, offsetX, 0);
                          //_tableViewProduct.frame = CGRectOffset(_tableViewProduct.frame, offsetX, 0);
 
