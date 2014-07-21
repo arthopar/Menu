@@ -55,43 +55,41 @@
     //Get a UIImage from the UIView
     UIBlurEffect *blureEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:blureEffect];
-    effectView.frame = _viewForLeft.bounds;
-    [effectView setAlpha:0.8];
+    //[effectView setAlpha:0.8];
     [effectView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    [_viewForLeft addConstraint:[NSLayoutConstraint constraintWithItem:effectView
-                                                          attribute:NSLayoutAttributeTop
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:_viewForLeft
-                                                          attribute:NSLayoutAttributeTop
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    
-    [_viewForLeft addConstraint:[NSLayoutConstraint constraintWithItem:effectView
-                                                          attribute:NSLayoutAttributeLeading
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:_viewForLeft
-                                                          attribute:NSLayoutAttributeLeading
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    
-    [_viewForLeft addConstraint:[NSLayoutConstraint constraintWithItem:effectView
-                                                          attribute:NSLayoutAttributeBottom
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:_viewForLeft
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    
-    [_viewForLeft addConstraint:[NSLayoutConstraint constraintWithItem:effectView
-                                                          attribute:NSLayoutAttributeTrailing
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:_viewForLeft
-                                                          attribute:NSLayoutAttributeTrailing
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    
     [_viewForLeft insertSubview:effectView belowSubview:_tableViewCategories];
+    [_viewForLeft addConstraint:[NSLayoutConstraint constraintWithItem:effectView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_viewForLeft
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    
+    [_viewForLeft addConstraint:[NSLayoutConstraint constraintWithItem:effectView
+                                                          attribute:NSLayoutAttributeLeading
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_viewForLeft
+                                                          attribute:NSLayoutAttributeLeading
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    
+    [_viewForLeft addConstraint:[NSLayoutConstraint constraintWithItem:effectView
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_viewForLeft
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    
+    [_viewForLeft addConstraint:[NSLayoutConstraint constraintWithItem:effectView
+                                                          attribute:NSLayoutAttributeTrailing
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_viewForLeft
+                                                          attribute:NSLayoutAttributeTrailing
+                                                         multiplier:1.0
+                                                           constant:0.0]];
 }
 
 - (UIImage *)applyBlurOnImage: (UIImage *)imageToBlur withRadius: (CGFloat)blurRadius
