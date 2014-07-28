@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Imf-Qu-Ljq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Imf-Qu-Ljq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Products View Controller - Detail-->
@@ -13,18 +13,18 @@
                         <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="8RM-DX-wM8">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="123" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cpB-EA-Exc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="123" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cpB-EA-Exc">
                                 <rect key="frame" x="113" y="63" width="367" height="408"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="130" id="UHB-sd-eCD" customClass="ProductCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="130" id="UHB-sd-eCD" customClass="ProductCell">
                                         <rect key="frame" x="0.0" y="22" width="367" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UHB-sd-eCD" id="1kV-ee-oJq">
@@ -38,9 +38,6 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits"/>
-                                                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                        <rect key="frame" x="322" y="53" width="35" height="30"/>
-                                                    </variation>
                                                     <connections>
                                                         <outlet property="delegate" destination="1kV-ee-oJq" id="tkc-Ph-Xug"/>
                                                     </connections>
@@ -56,9 +53,6 @@
                                                     <state key="normal" title="Button" image="snipper_up">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                        <rect key="frame" x="317" y="24" width="50" height="40"/>
-                                                    </variation>
                                                     <connections>
                                                         <action selector="onSnipperUp:" destination="UHB-sd-eCD" eventType="touchDown" id="jWs-4y-znb"/>
                                                     </connections>
@@ -71,9 +65,6 @@
                                                     <state key="normal" title="Button" image="snipper_down">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                        <rect key="frame" x="317" y="75" width="50" height="40"/>
-                                                    </variation>
                                                     <connections>
                                                         <action selector="onSnipperDown:" destination="UHB-sd-eCD" eventType="touchDown" id="tDu-g2-PVP"/>
                                                     </connections>
@@ -92,9 +83,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                        <rect key="frame" x="122" y="15" width="115" height="21"/>
-                                                    </variation>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbb-1r-gCd" userLabel="Button - Order">
                                                     <rect key="frame" x="376" y="77" width="44" height="52"/>
@@ -104,14 +92,11 @@
                                                     <state key="normal" title="Button" image="cart">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                        <rect key="frame" x="282" y="28" width="89" height="80"/>
-                                                    </variation>
                                                     <connections>
                                                         <action selector="onProductOrderPress:" destination="UHB-sd-eCD" eventType="touchDown" id="b4O-aa-MwK"/>
                                                     </connections>
                                                 </button>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1nx-5C-HGu">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1nx-5C-HGu">
                                                     <rect key="frame" x="158" y="0.0" width="205" height="47"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -156,22 +141,19 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
-                                    <rect key="frame" x="240" y="64" width="400" height="576"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="JEX-9P-axG" id="mXY-BZ-tNJ"/>
                                     <outlet property="delegate" destination="JEX-9P-axG" id="zF4-Nw-MQH"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VpV-gI-RSA">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VpV-gI-RSA">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="480"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="133" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uqf-fk-mkE">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="133" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uqf-fk-mkE">
                                         <rect key="frame" x="0.0" y="66" width="240" height="285"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="CategoryCustomViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCustomViewCell" rowHeight="100" id="Vvh-tv-gBQ" customClass="CategoryCustomViewCell">
+                                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="CategoryCustomViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCustomViewCell" rowHeight="100" id="Vvh-tv-gBQ" customClass="CategoryCustomViewCell">
                                                 <rect key="frame" x="0.0" y="22" width="240" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vvh-tv-gBQ" id="FTH-P6-6GQ">
@@ -206,9 +188,6 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
-                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="468"/>
-                                        </variation>
                                         <connections>
                                             <outlet property="dataSource" destination="JEX-9P-axG" id="cuy-QA-M51"/>
                                             <outlet property="delegate" destination="JEX-9P-axG" id="adw-yS-T46"/>
@@ -232,28 +211,6 @@
                                     <constraint firstItem="uqf-fk-mkE" firstAttribute="leading" secondItem="VpV-gI-RSA" secondAttribute="leading" id="XoX-al-f5i"/>
                                     <constraint firstItem="uqf-fk-mkE" firstAttribute="top" secondItem="VpV-gI-RSA" secondAttribute="top" id="ubf-hZ-wgU"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="3Cm-3t-riq"/>
-                                        <exclude reference="TsJ-9g-TIQ"/>
-                                        <exclude reference="XoX-al-f5i"/>
-                                        <exclude reference="ubf-hZ-wgU"/>
-                                        <exclude reference="1ow-ye-SB2"/>
-                                        <exclude reference="B9w-Kc-5QO"/>
-                                        <exclude reference="BFA-CA-giV"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="3Cm-3t-riq"/>
-                                        <include reference="TsJ-9g-TIQ"/>
-                                        <include reference="XoX-al-f5i"/>
-                                        <include reference="ubf-hZ-wgU"/>
-                                        <include reference="1ow-ye-SB2"/>
-                                        <include reference="B9w-Kc-5QO"/>
-                                        <include reference="BFA-CA-giV"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -277,51 +234,6 @@
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="cpB-EA-Exc" secondAttribute="bottom" id="x7I-Ph-G94"/>
                             <constraint firstItem="8RM-DX-wM8" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="xHN-V3-Apu"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="3vv-NU-IIo"/>
-                                <exclude reference="DyL-yu-jG2"/>
-                                <exclude reference="Hdt-Zt-fNg"/>
-                                <exclude reference="SWz-nD-yK1"/>
-                                <exclude reference="Sp4-Xt-F2k"/>
-                                <exclude reference="THE-SP-bzx"/>
-                                <exclude reference="Ymo-Yn-ixL"/>
-                                <exclude reference="dWx-qk-S99"/>
-                                <exclude reference="kwH-uU-fvh"/>
-                                <exclude reference="xHN-V3-Apu"/>
-                                <exclude reference="fob-A1-NXQ"/>
-                                <exclude reference="vBt-ll-jh4"/>
-                                <exclude reference="MVx-w5-AR8"/>
-                                <exclude reference="gas-KL-5Kx"/>
-                                <exclude reference="vDy-cW-T40"/>
-                                <exclude reference="LNa-xx-xr0"/>
-                                <exclude reference="rua-vT-KQc"/>
-                                <exclude reference="x7I-Ph-G94"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=regular">
-                            <mask key="constraints">
-                                <include reference="3vv-NU-IIo"/>
-                                <include reference="DyL-yu-jG2"/>
-                                <include reference="Hdt-Zt-fNg"/>
-                                <include reference="SWz-nD-yK1"/>
-                                <include reference="Sp4-Xt-F2k"/>
-                                <include reference="THE-SP-bzx"/>
-                                <include reference="Ymo-Yn-ixL"/>
-                                <include reference="dWx-qk-S99"/>
-                                <include reference="kwH-uU-fvh"/>
-                                <include reference="xHN-V3-Apu"/>
-                                <include reference="fob-A1-NXQ"/>
-                                <include reference="vBt-ll-jh4"/>
-                                <include reference="MVx-w5-AR8"/>
-                                <include reference="gas-KL-5Kx"/>
-                                <include reference="vDy-cW-T40"/>
-                                <include reference="LNa-xx-xr0"/>
-                                <include reference="rua-vT-KQc"/>
-                                <include reference="x7I-Ph-G94"/>
-                            </mask>
-                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
@@ -356,28 +268,28 @@
                         <viewControllerLayoutGuide type="bottom" id="M7Q-7x-V97"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AL2-Cy-xTg">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainPageBackground" translatesAutoresizingMaskIntoConstraints="NO" id="vZd-Pd-Imi">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSo-FV-RkH">
-                                <rect key="frame" x="371" y="225" width="89" height="30"/>
+                                <rect key="frame" x="211" y="225" width="89" height="30"/>
                                 <state key="normal" title="Feedback">
                                     <color key="titleColor" red="0.50196081399917603" green="0.0" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clL-2c-ryn">
-                                <rect key="frame" x="371" y="285" width="89" height="30"/>
+                                <rect key="frame" x="211" y="285" width="89" height="30"/>
                                 <state key="normal" title="Info">
                                     <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MENU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIv-6D-afc">
-                                <rect key="frame" x="120" y="20" width="241" height="36"/>
+                                <rect key="frame" x="120" y="20" width="81" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="8hX-UL-TVJ"/>
                                 </constraints>
@@ -385,8 +297,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-N5-LqI">
-                                <rect key="frame" x="52" y="64" width="309" height="355"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-N5-LqI">
+                                <rect key="frame" x="52" y="64" width="149" height="355"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.39000000000000001" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1O1-Kf-Hkm">
                                     <size key="itemSize" width="120" height="120"/>
@@ -419,16 +331,13 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
-                                    <rect key="frame" x="52" y="64" width="469" height="515"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="Imf-Qu-Ljq" id="5zn-qu-8pm"/>
                                     <outlet property="delegate" destination="Imf-Qu-Ljq" id="KYr-PL-4h0"/>
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDf-Mw-HAZ">
-                                <rect key="frame" x="371" y="145" width="89" height="50"/>
+                                <rect key="frame" x="211" y="145" width="89" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="89" id="gdW-lb-leU"/>
                                     <constraint firstAttribute="height" constant="50" id="yCe-sG-Ztl"/>
@@ -439,7 +348,7 @@
                                 </state>
                                 <connections>
                                     <action selector="selectLangAction:" destination="Imf-Qu-Ljq" eventType="touchUpInside" id="jhY-HN-6ut"/>
-                                    <segue destination="vC3-pB-5Vb" kind="show" id="ACj-ZV-ICo"/>
+                                    <segue destination="vC3-pB-5Vb" kind="push" id="ACj-ZV-ICo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -469,7 +378,6 @@
                             <constraint firstItem="clL-2c-ryn" firstAttribute="top" secondItem="oSo-FV-RkH" secondAttribute="bottom" constant="30" id="ukE-HH-wxI"/>
                             <constraint firstAttribute="trailing" secondItem="dDf-Mw-HAZ" secondAttribute="trailing" constant="20" symbolic="YES" id="zUU-EJ-DVv"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <connections>
                         <outlet property="collectionViewCategory" destination="ahI-N5-LqI" id="5QH-2a-zOx"/>
@@ -503,4 +411,9 @@
         <image name="snipper_down" width="48" height="48"/>
         <image name="snipper_up" width="48" height="48"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
 </document>
